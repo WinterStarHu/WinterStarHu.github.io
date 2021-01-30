@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://WinterStarHu.github.io</id>
     <title>WinterStarHu Go语言</title>
-    <updated>2021-01-30T13:34:29.938Z</updated>
+    <updated>2021-01-30T13:44:40.240Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://WinterStarHu.github.io"/>
     <link rel="self" href="https://WinterStarHu.github.io/atom.xml"/>
@@ -606,7 +606,8 @@ unicode 字符集中汉字的范围是 4e00～9fa5，十进制范围是 19968～
 <a href="https://www.cnblogs.com/zhangguosheng1121/p/11448194.html">Go安装与Goland破解永久版</a><br>
 <a href="http://www.weixueyuan.net/go/">Go语言（Golang）教程</a><br>
 <a href="https://www.cnblogs.com/asketch/p/14286903.html">Go Lang 异或符</a><br>
-<a href="https://baike.baidu.com/item/ASCII/309296?fr=aladdin">ASCII</a></p>
+<a href="https://baike.baidu.com/item/ASCII/309296?fr=aladdin">ASCII</a><br>
+<a href="https://www.bilibili.com/video/BV1jJ411c7s3">千峰教育 go语言视频教程</a></p>
 ]]></content>
     </entry>
     <entry>
