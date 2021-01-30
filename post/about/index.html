@@ -1,16 +1,18 @@
 <html>
+
 <head>
     <meta charset="utf-8"/>
-<meta name="description" content=""/>
+<meta name="description" content="Feel free to contact me."/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
 
 <title>关于 | WinterStarHu Go语言</title>
 
-<link rel="shortcut icon" href="https://WinterStarHu.github.io/favicon.ico?v=1612009612105">
+<link rel="shortcut icon" href="https://WinterStarHu.github.io/favicon.ico?v=1612012753497">
 
 <link href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" rel="stylesheet">
 <link rel="stylesheet" href="https://WinterStarHu.github.io/styles/main.css">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.0/dist/css/bootstrap.min.css">
+
 
 <script src="https://cdn.jsdelivr.net/npm/@highlightjs/cdn-assets/highlight.min.js"></script>
 <script src="https://cdn.bootcss.com/highlight.js/9.15.10/languages/dockerfile.min.js"></script>
@@ -20,6 +22,7 @@
 <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.0/dist/js/bootstrap.min.js"></script>
+
 <!-- DEMO JS -->
 <!--<script src="media/scripts/index.js"></script>-->
 
@@ -38,22 +41,54 @@
 
 
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.css">
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mermaid/8.8.0/mermaid.min.js"></script>
+<script>
+    var config = {
+        startOnLoad:true,
+        flowchart:{
+            useMaxWidth:false,
+            htmlLabels:true
+        }
+    };
+    mermaid.initialize(config);
+    $(function(){
+        var elements = document.getElementsByClassName("language-mermaid");
+        for (var i = elements.length; i--;) {
+            element = elements[i];
+            var graphDefinition = element.innerText;
+            if (graphDefinition) {
+                var svg = mermaid.render('ha_mermaid_' + i, graphDefinition, function(svg){});
+                if (svg) {
+                    var svgElement = document.createElement('div');
+                    preNode = element.parentNode;
+                    svgElement.innerHTML = svg;
+                    svgElement.setAttribute('class', 'mermaid');
+                    svgElement.setAttribute('data-processed', 'true');
+                    preNode.parentNode.replaceChild(svgElement, preNode);
+                }
+            }
+        }
+    });
+</script>
 </head>
+
 <body>
-<div class="main gt-bg-theme-color-first">
-    <nav class="navbar navbar-expand-lg">
-    <div class="navbar-brand">
-        <img class="user-avatar" src="/images/avatar.png" alt="头像">
-        <div class="site-name gt-c-content-color-first">
-            WinterStarHu Go语言
+    <div class="main gt-bg-theme-color-first">
+        <nav class="navbar navbar-expand-lg">
+    <a href="/">
+        <div class="navbar-brand">
+            <img class="user-avatar" src="/images/avatar.png" alt="头像">
+            <div class="site-name gt-c-content-color-first">
+                WinterStarHu Go语言
+            </div>
         </div>
-    </div>
+    </a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
             aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <i class="fas fa-bars gt-c-content-color-first" style="font-size: 18px"></i>
     </button>
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <div class="navbar-nav mr-auto" style="text-align: center">
+        <div class="navbar-nav " style="text-align: center">
             
                 <div class="nav-item">
                     
@@ -89,7 +124,7 @@
             
         </div>
         <div style="text-align: center">
-            <form id="gridea-search-form" style="position: relative" data-update="1612009612105" action="/search/index.html">
+            <form id="gridea-search-form" style="position: relative" data-update="1612012753497" action="/search/index.html">
                 <input class="search-input" autocomplete="off" spellcheck="false" name="q" placeholder="搜索文章" />
                 <i class="fas fa-search gt-c-content-color-first" style="position: absolute; top: 9px; left: 10px;"></i>
             </form>
@@ -97,20 +132,35 @@
     </div>
 </nav>
 
-    <div class="post-container">
-        <div class="post-detail gt-bg-theme-color-second">
-            <article class="gt-post-content">
-                <h2 class="post-title">
-                    关于
-                </h2>
-                <div class="post-info">
-                    <time class="post-time gt-c-content-color-first">
-                        · 2019-01-25 ·
-                    </time>
-                    
-                </div>
-                <div class="post-content">
-	    
+        <div class="post-container">
+
+            <!-- <div class="post-detail gt-bg-theme-color-second"> -->
+            <article style="display:flex;">
+                <div class="post-detail gt-bg-theme-color-second gt-post-content">
+                    <h2 class="post-title">
+                        关于
+                    </h2>
+                    <div class="post-info">
+                        <div>
+                            <time class="post-time gt-c-content-color-first">
+                                · 2019-01-25 ·
+                            </time>
+                            
+                        </div>
+                        <div>
+                            
+                            <span id="/post/about/"
+                                class="leancloud_visitors" data-flag-title="关于">
+                                <em class="post-meta-item-text">阅读量 </em>
+                                <i class="leancloud-visitors-count">0</i>
+                            </span>
+                            
+                        </div>
+                    </div>
+
+                    <!-- <div class="post-content-wrapper"> -->
+                    <div class="post-content">
+                        
     <div class="toc-card i-card ">
         <div class="toc-content">
             <ul class="markdownIt-TOC">
@@ -150,7 +200,8 @@
         </script>
     </div>
     
-                    <blockquote>
+
+                        <blockquote>
 <p>欢迎来到我的小站呀，很高兴遇见你！🤝</p>
 </blockquote>
 <h2 id="关于本站">🏠 关于本站</h2>
@@ -163,54 +214,189 @@
 <p>只享受当下，不关注诗与远方</p>
 <h2 id="联系我呀">📬 联系我呀</h2>
 <p>dongxinghu@foxmail.com</p>
+ 
+                    </div>
+                    <div class="essaySuffix-box">
+                        <div class="essaySuffix-box-left"><img
+                                src="/images/avatar.png" alt="">
+                        </div>
+                        <div class="essaySuffix-box-right"><span
+                                class="essaySuffix-right-title">本文作者</span>：<strong><span style="font-size: 12px;"><a
+                                        href="/about"
+                                        target="_blank">WinterStarHu Go语言</a></span></strong> <br><span
+                                style="font-weight: bold; white-space:nowrap;">本文链接</span>：<a
+                                href="https://WinterStarHu.github.io/post/about/"
+                                target="_blank">https://WinterStarHu.github.io/post/about/</a><br><span
+                                class="essaySuffix-right-title">版权声明</span>：本博客所有文章除特别声明外，均采用 <a
+                                href="https://creativecommons.org/licenses/by-nc-nd/4.0/" alt="BY-NC-SA"
+                                title="BY-NC-SA" target="_blank">BY-NC-SA</a> 许可协议。转载请注明出处！</div>
+                        <div style="clear: both;"></div>
+                    </div>
+                </div>
+                <!-- </div> -->
+                <div class="toc-container">
+                    <ul class="markdownIt-TOC">
+<li>
+<ul>
+<li><a href="#%E5%85%B3%E4%BA%8E%E6%9C%AC%E7%AB%99">🏠 关于本站</a></li>
+<li><a href="#%E5%8D%9A%E4%B8%BB%E6%98%AF%E8%B0%81">👨‍💻 博主是谁</a></li>
+<li><a href="#%E5%85%B4%E8%B6%A3%E7%88%B1%E5%A5%BD">⛹ 兴趣爱好</a></li>
+<li><a href="#%E8%81%94%E7%B3%BB%E6%88%91%E5%91%80">📬 联系我呀</a></li>
+</ul>
+</li>
+</ul>
 
                 </div>
             </article>
-        </div>
+            <!-- </div> -->
 
-        
+          
 
-        
+            
 
-        
+            
 
-        
+            
+            <script src='https://cdn.jsdelivr.net/npm/valine/dist/Valine.min.js'></script>
 
-        <div class="site-footer gt-c-content-color-first">
-    <div class="slogan gt-c-content-color-first">Feel free to contact me.</div>
-    <div class="social-container">
-        
+<style>
+	div#vcomments{
+		width:100%;
+		max-width: 1000px;
+		padding: 2.5%
+	}
+</style>
+
+
+	<div id="vcomments"></div>
+
+<script>
+	new Valine({
+		el: '#vcomments',
+		appId: '1AV1E68LhSM7EIKiQR3R58rC-gzGzoHsz',
+		appKey: '7YhbKEbhMI8dRI1KK6sOYjMq',
+		avatar: 'wavatar',
+		pageSize: 5,
+		recordIp: true,
+		placeholder: 'Just Go Go',
+		visitor: true,
+	});
+</script>
+
             
-                <a href="https://github.com/WinterStarHu" target="_blank">
-                    <i class="fab fa-github gt-c-content-color-first"></i>
-                </a>
-            
-        
-            
-        
-            
-        
-            
-        
-            
-        
-            
-        
-    </div>
-    <div class="footer-info">
-        Powered by <a href="https://github.com/getgridea/gridea" target="_blank">Gridea</a>
-    </div>
+
+            <div class="site-footer gt-c-content-color-first">
+
+  <div class="social-container">
+
+    <a href="" target="_blank" title="">
+      <i class="fab fa-github gt-c-content-color-first"></i>
+    </a>
+
+    <a href="" target="_blank" title="">
+      <i class="fas fa-blog gt-c-content-color-first"></i>
+    </a>
+
+    <a href="" target="_blank" title="">
+      <i class="fab fa-cuttlefish gt-c-content-color-first"></i>
+    </a>
+
+    <a href="mailto:dongxinghu@foxmail.com" title="dongxinghu@foxmail.com">
+      <i class="fas fa-envelope gt-c-content-color-first"></i>
+    </a>
+
+  </div>
+  <div class="slogan gt-c-content-color-first">Feel free to contact me.</div>
+  
+  <div class="footer-info">
+    Powered by <a href="https://github.com/getgridea/gridea" target="_blank">Gridea</a>
+  </div>
+  
+  <div>
     <div>
-        Theme by <a href="https://imhanjie.com/" target="_blank">imhanjie</a>, Powered by <a
-                href="https://github.com/getgridea/gridea" target="_blank">Gridea | <a href="https://WinterStarHu.github.io/atom.xml" target="_blank">RSS</a></a>
-    </div>
+      Theme by <a href="https://github.com/WinterStarHu/gridea-theme-pure-fashion-new" target="_blank">winterstarhu</a>, Powered by <a
+              href="https://github.com/getgridea/gridea" target="_blank">Gridea | <a href="https://WinterStarHu.github.io/atom.xml" target="_blank">RSS</a></a>
+  </div>
 </div>
 
 <script>
   hljs.initHighlightingOnLoad()
 </script>
 
+            <script>
+  let mainNavLinks = document.querySelectorAll(".markdownIt-TOC a");
+  
+  if (mainNavLinks == null || mainNavLinks.length == 0) {
+    let tocContainer = document.querySelector(".toc-container");
+    tocContainer.classList.remove("toc-container")
+    // tocContainer.parentElement.firstElementChild.style.width = "100%"
+    console.log("隐藏大纲")
+  } else {
+
+    // This should probably be throttled.
+    // Especially because it triggers during smooth scrolling.
+    // https://lodash.com/docs/4.17.10#throttle
+    // You could do like...
+    // window.addEventListener("scroll", () => {
+    //    _.throttle(doThatStuff, 100);
+    // });
+    // Only not doing it here to keep this Pen dependency-free.
+
+
+    window.addEventListener("scroll", event => {
+      let fromTop = window.scrollY;
+
+      mainNavLinks.forEach((link, index) => {
+        let section = document.getElementById(decodeURI(link.hash).substring(1));
+        let nextSection = null
+        if (mainNavLinks[index + 1]) {
+          nextSection = document.getElementById(decodeURI(mainNavLinks[index + 1].hash).substring(1));
+        }
+        if (section.offsetTop <= fromTop) {
+          if (nextSection) {
+            if (nextSection.offsetTop > fromTop) {
+              link.classList.add("current");
+            } else {
+              link.classList.remove("current");
+            }
+          } else {
+            link.classList.add("current");
+          }
+        } else {
+          link.classList.remove("current");
+        }
+      });
+    });
+  }
+
+
+
+</script>
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css" />
+<script src="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js"></script>
+
+<script>
+  let images = document.querySelectorAll("figure > img");
+  //   debugger
+  //   console.log("dddd: "+ images);
+  images.forEach(image => {
+    var parent = image.parentElement;
+    parent.removeChild(image);
+    var aelem = document.createElement('a');
+    aelem.href = image.src;
+    aelem.dataset['fancybox'] = 'gallery';
+    aelem.classList.add('fancybox');
+    aelem.appendChild(image);
+    parent.appendChild(aelem);
+  })
+
+//   <a data-fancybox="gallery" href="big_1.jpg"><img src="small_1.jpg"></a>
+// <a data-fancybox="gallery" href="big_2.jpg"><img src="small_2.jpg"></a>
+</script>
+        </div>
     </div>
-</div>
+
 </body>
+
 </html>
