@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://WinterStarHu.github.io</id>
     <title>WinterStarHu Go语言</title>
-    <updated>2021-01-30T13:57:03.759Z</updated>
+    <updated>2021-01-30T14:00:36.242Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://WinterStarHu.github.io"/>
     <link rel="self" href="https://WinterStarHu.github.io/atom.xml"/>
@@ -16,9 +16,9 @@
         <link href="https://WinterStarHu.github.io/post/go-leetcode/">
         </link>
         <updated>2021-01-30T12:11:12.000Z</updated>
-        <summary type="html"><![CDATA[<p><span style="border-bottom:2px solid black;">记录刷题历程...</span></p>
+        <summary type="html"><![CDATA[<p>记录刷题历程</p>
 ]]></summary>
-        <content type="html"><![CDATA[<p><span style="border-bottom:2px solid black;">记录刷题历程...</span></p>
+        <content type="html"><![CDATA[<p>记录刷题历程</p>
 <!-- more -->
 <h1 id="参考"><em>参考</em></h1>
 <p><a href="https://books.halfrost.com/leetcode/">LeetCode Cookbook</a><br>
@@ -32,9 +32,9 @@
         <link href="https://WinterStarHu.github.io/post/go-helloworld/">
         </link>
         <updated>2021-01-30T04:28:55.000Z</updated>
-        <summary type="html"><![CDATA[<p><span style="border-bottom:2px solid black;"><strong>入门篇</strong>😀...</span></p>
+        <summary type="html"><![CDATA[<p><strong>入门篇</strong>😀</p>
 ]]></summary>
-        <content type="html"><![CDATA[<p><span style="border-bottom:2px solid black;"><strong>入门篇</strong>😀...</span></p>
+        <content type="html"><![CDATA[<p><strong>入门篇</strong>😀</p>
 <!-- more -->
 <h1 id="环境配置"><em><strong>环境配置</strong></em></h1>
 <p>安装Go和GoLand<br>
@@ -616,9 +616,9 @@ unicode 字符集中汉字的范围是 4e00～9fa5，十进制范围是 19968～
         <link href="https://WinterStarHu.github.io/post/hello-gridea/">
         </link>
         <updated>2018-12-11T16:00:00.000Z</updated>
-        <summary type="html"><![CDATA[<p><span style="border-bottom:2px solid black;">本网站由Github Pages提供静态网页服务，Gridea提供写作服务和markdown代码转网页服务...</span></p>
+        <summary type="html"><![CDATA[<p>本网站由Github Pages提供静态网页服务，Gridea提供写作服务和markdown代码转网页服务</p>
 ]]></summary>
-        <content type="html"><![CDATA[<p><span style="border-bottom:2px solid black;">本网站由Github Pages提供静态网页服务，Gridea提供写作服务和markdown代码转网页服务...</span></p>
+        <content type="html"><![CDATA[<p>本网站由Github Pages提供静态网页服务，Gridea提供写作服务和markdown代码转网页服务</p>
 <!-- more -->
 <p>以下是markdown语法：</p>
 <pre><code>👏  欢迎使用 **Gridea** ！  
