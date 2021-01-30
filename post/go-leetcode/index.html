@@ -4,7 +4,7 @@
 <meta name="description" content=""/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
 
-<title>Gridea | WinterStarHu Go语言</title>
+<title>Go Leetcode | WinterStarHu Go语言</title>
 
 <link rel="shortcut icon" href="https://WinterStarHu.github.io/favicon.ico?v=1612009612105">
 
@@ -37,11 +37,11 @@
     </script>
 
 
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.css">
 </head>
 <body>
 <div class="main gt-bg-theme-color-first">
-    <div class="main-content">
-        <nav class="navbar navbar-expand-lg">
+    <nav class="navbar navbar-expand-lg">
     <div class="navbar-brand">
         <img class="user-avatar" src="/images/avatar.png" alt="头像">
         <div class="site-name gt-c-content-color-first">
@@ -97,54 +97,81 @@
     </div>
 </nav>
 
-        <div class="current-tag-container">
-            <h2 class="title gt-c-content-color-first">
-                #Gridea
-            </h2>
-        </div>
-        <div class="post-list-container">
-    <div class="post-inner">
-        
-            <div class="post gt-bg-theme-color-second">
-                <div class="post-left">
-                    <div>
-                        
-                        <a href="https://WinterStarHu.github.io/post/hello-gridea/">
-                            <span class="post-title gt-c-content-color-first">Hello Makrdown</span>
-                        </a>
-                    </div>
-                    <div class="gt-post-content post-abstract gt-c-content-color-second">
-                        <p>本网站由Github Pages提供静态网页服务，Gridea提供写作服务和markdown代码转网页服务。</p>
-
-                    </div>
-                    <div class="post-info">
-                        <time class="post-time gt-c-content-color-first">
-                            发布于 · 2018-12-12 ·
-                        </time>
-                        
-                            <a href="https://WinterStarHu.github.io/tag/2JxwS6Sgi/" class="post-tag">
-                                # Markdown
-                            </a>
-                        
-                            <a href="https://WinterStarHu.github.io/tag/_uVz-25tk/" class="post-tag">
-                                # Gridea
-                            </a>
-                        
-                    </div>
+    <div class="post-container">
+        <div class="post-detail gt-bg-theme-color-second">
+            <article class="gt-post-content">
+                <h2 class="post-title">
+                    Go Leetcode
+                </h2>
+                <div class="post-info">
+                    <time class="post-time gt-c-content-color-first">
+                        · 2021-01-30 ·
+                    </time>
+                    
                 </div>
-                
-                    <a href="https://WinterStarHu.github.io/post/hello-gridea/" class="post-feature-image"
-                       style="background-image: url('https://WinterStarHu.github.io/post-images/hello-gridea.png')">
-                    </a>
-                
+                <div class="post-content">
+	    
+    <div class="toc-card i-card ">
+        <div class="toc-content">
+            <ul class="markdownIt-TOC">
+<li>
+<ul>
+<li><a href="#%E5%8F%82%E8%80%83"><em>参考</em></a></li>
+</ul>
+</li>
+</ul>
+
+        </div>
+        <script>
+            function locateCatelogList() {
+                /*获取文章目录集合,可通过:header过滤器*/
+                var alis = $('.post-content :header');
+                /*获取侧边栏目录列表集合**/
+                var sidebar_alis = $('.markdownIt-TOC a');
+                /*获取滚动条到顶部的距离*/
+                var scroll_height = $(window).scrollTop();
+                for (var i = 0; i < alis.length; i++) {
+                    /*获取锚点集合中的元素分别到顶点的距离*/
+                    var a_height = $(alis[i]).offset().top;
+                    if (a_height < scroll_height) {
+                        /*高亮显示*/
+                        sidebar_alis.removeClass('on');
+                        $(sidebar_alis[i]).addClass('on');
+                    }
+                }
+            }
+            $(function() {
+                /*绑定滚动事件 */
+                $(window).bind('scroll', locateCatelogList);
+            });
+        </script>
+    </div>
+    
+                    <p>记录刷题历程</p>
+<!-- more -->
+<h2 id="参考"><em>参考</em></h2>
+<p><a href="https://books.halfrost.com/leetcode/">LeetCode Cookbook</a><br>
+<a href="https://leetcode-cn.com/">力扣</a><br>
+<a href="https://www.nowcoder.com/contestRoom">牛客网</a></p>
+
+                </div>
+            </article>
+        </div>
+
+        
+            <div class="next-post">
+                <div class="next gt-c-content-color-first">下一篇</div>
+                <a href="https://WinterStarHu.github.io/post/go-helloworld/" class="post-title gt-a-link">
+                    Go HelloWorld
+                </a>
             </div>
         
-    </div>
-</div>
-        <div class="pagination-container">
-    
-    
-</div>
+
+        
+
+        
+
+        
 
         <div class="site-footer gt-c-content-color-first">
     <div class="slogan gt-c-content-color-first">Feel free to contact me.</div>
