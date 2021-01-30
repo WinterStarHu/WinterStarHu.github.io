@@ -1,24 +1,120 @@
-<?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom">
-    <id>https://WinterStarHu.github.io</id>
-    <title>WinterStarHu Go语言</title>
-    <updated>2021-01-30T06:35:56.498Z</updated>
-    <generator>https://github.com/jpmonette/feed</generator>
-    <link rel="alternate" href="https://WinterStarHu.github.io"/>
-    <link rel="self" href="https://WinterStarHu.github.io/atom.xml"/>
-    <subtitle>Feel free to contact me.</subtitle>
-    <logo>https://WinterStarHu.github.io/images/avatar.png</logo>
-    <icon>https://WinterStarHu.github.io/favicon.ico</icon>
-    <rights>All rights reserved 2021, WinterStarHu Go语言</rights>
-    <entry>
-        <title type="html"><![CDATA[Go HelloWorld]]></title>
-        <id>https://WinterStarHu.github.io/post/go-helloworld/</id>
-        <link href="https://WinterStarHu.github.io/post/go-helloworld/">
-        </link>
-        <updated>2021-01-30T04:28:55.000Z</updated>
-        <summary type="html"><![CDATA[<p><strong>入门篇</strong>😀</p>
-]]></summary>
-        <content type="html"><![CDATA[<p><strong>入门篇</strong>😀</p>
+<html>
+<head>
+    <meta charset="utf-8"/>
+<meta name="description" content=""/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+
+<title>Go HelloWorld | WinterStarHu Go语言</title>
+
+<link rel="shortcut icon" href="https://WinterStarHu.github.io/favicon.ico?v=1611988551850">
+
+<link href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" rel="stylesheet">
+<link rel="stylesheet" href="https://WinterStarHu.github.io/styles/main.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.0/dist/css/bootstrap.min.css">
+
+<script src="https://cdn.jsdelivr.net/npm/@highlightjs/cdn-assets/highlight.min.js"></script>
+<script src="https://cdn.bootcss.com/highlight.js/9.15.10/languages/dockerfile.min.js"></script>
+<script src="https://cdn.bootcss.com/highlight.js/9.15.10/languages/dart.min.js"></script>
+
+<script src="https://cdn.jsdelivr.net/npm/moment@2.27.0/moment.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.0/dist/js/bootstrap.min.js"></script>
+<!-- DEMO JS -->
+<!--<script src="media/scripts/index.js"></script>-->
+
+
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-157397408-1"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+
+        function gtag() {
+            dataLayer.push(arguments);
+        }
+
+        gtag('js', new Date());
+        gtag('config', 'UA-157397408-1');
+    </script>
+
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.css">
+</head>
+<body>
+<div class="main gt-bg-theme-color-first">
+    <nav class="navbar navbar-expand-lg">
+    <div class="navbar-brand">
+        <img class="user-avatar" src="/images/avatar.png" alt="头像">
+        <div class="site-name gt-c-content-color-first">
+            WinterStarHu Go语言
+        </div>
+    </div>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <i class="fas fa-bars gt-c-content-color-first" style="font-size: 18px"></i>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <div class="navbar-nav mr-auto" style="text-align: center">
+            
+                <div class="nav-item">
+                    
+                        <a href="/" class="menu gt-a-link">
+                            首页
+                        </a>
+                    
+                </div>
+            
+                <div class="nav-item">
+                    
+                        <a href="/archives" class="menu gt-a-link">
+                            归档
+                        </a>
+                    
+                </div>
+            
+                <div class="nav-item">
+                    
+                        <a href="/tags" class="menu gt-a-link">
+                            标签
+                        </a>
+                    
+                </div>
+            
+                <div class="nav-item">
+                    
+                        <a href="/post/about" class="menu gt-a-link">
+                            关于
+                        </a>
+                    
+                </div>
+            
+        </div>
+        <div style="text-align: center">
+            <form id="gridea-search-form" style="position: relative" data-update="1611988551850" action="/search/index.html">
+                <input class="search-input" autocomplete="off" spellcheck="false" name="q" placeholder="搜索文章" />
+                <i class="fas fa-search gt-c-content-color-first" style="position: absolute; top: 9px; left: 10px;"></i>
+            </form>
+        </div>
+    </div>
+</nav>
+
+    <div class="post-container">
+        <div class="post-detail gt-bg-theme-color-second">
+            <article class="gt-post-content">
+                <h2 class="post-title">
+                    Go HelloWorld
+                </h2>
+                <div class="post-info">
+                    <time class="post-time gt-c-content-color-first">
+                        · 2021-01-30 ·
+                    </time>
+                    
+                        <a href="https://WinterStarHu.github.io/tag/F6pGCa-i7/" class="post-tags">
+                            # Go
+                        </a>
+                    
+                </div>
+                <div class="post-content">
+                    <p><strong>入门篇</strong>😀</p>
 <!-- more -->
 <h2 id="环境配置"><em>环境配置</em></h2>
 <p>安装Go和GoLand<br>
@@ -562,59 +658,61 @@ unicode 字符集中汉字的范围是 4e00～9fa5，十进制范围是 19968～
 <a href="http://www.weixueyuan.net/go/">Go语言（Golang）教程</a><br>
 <a href="https://www.cnblogs.com/asketch/p/14286903.html">Go Lang 异或符</a><br>
 <a href="https://baike.baidu.com/item/ASCII/309296?fr=aladdin">ASCII</a></p>
-]]></content>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Hello Makrdown]]></title>
-        <id>https://WinterStarHu.github.io/post/hello-gridea/</id>
-        <link href="https://WinterStarHu.github.io/post/hello-gridea/">
-        </link>
-        <updated>2018-12-11T16:00:00.000Z</updated>
-        <summary type="html"><![CDATA[<p>本网站由Github Pages提供静态网页服务，Gridea提供写作服务和markdown代码转网页服务。</p>
-]]></summary>
-        <content type="html"><![CDATA[<p>本网站由Github Pages提供静态网页服务，Gridea提供写作服务和markdown代码转网页服务。</p>
-<!-- more -->
-<p>以下是markdown语法：</p>
-<pre><code>👏  欢迎使用 **Gridea** ！  
-✍️  **Gridea** 一个静态博客写作客户端。你可以用它来记录你的生活、心情、知识、笔记、创意... ... 
 
-&lt;!-- more --&gt;
+                </div>
+            </article>
+        </div>
 
-[Github](https://github.com/getgridea/gridea)  
-[Gridea 主页](https://gridea.dev/)  
-[示例网站](http://fehey.com/)
+        
+            <div class="next-post">
+                <div class="next gt-c-content-color-first">下一篇</div>
+                <a href="https://WinterStarHu.github.io/post/hello-gridea/" class="post-title gt-a-link">
+                    Hello Makrdown
+                </a>
+            </div>
+        
 
-## 特性👇
-📝  你可以使用最酷的 **Markdown** 语法，进行快速创作  
+        
 
-🌉  你可以给文章配上精美的封面图和在文章任意位置插入图片  
+        
 
-🏷️  你可以对文章进行标签分组  
+        
 
-📋  你可以自定义菜单，甚至可以创建外部链接菜单  
+        <div class="site-footer gt-c-content-color-first">
+    <div class="slogan gt-c-content-color-first">Feel free to contact me.</div>
+    <div class="social-container">
+        
+            
+                <a href="https://github.com/WinterStarHu" target="_blank">
+                    <i class="fab fa-github gt-c-content-color-first"></i>
+                </a>
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+    </div>
+    <div class="footer-info">
+        Powered by <a href="https://github.com/getgridea/gridea" target="_blank">Gridea</a>
+    </div>
+    <div>
+        Theme by <a href="https://imhanjie.com/" target="_blank">imhanjie</a>, Powered by <a
+                href="https://github.com/getgridea/gridea" target="_blank">Gridea | <a href="https://WinterStarHu.github.io/atom.xml" target="_blank">RSS</a></a>
+    </div>
+</div>
 
-💻  你可以在 **Windows**，**MacOS** 或 **Linux** 设备上使用此客户端  
+<script>
+  hljs.initHighlightingOnLoad()
+</script>
 
-🌎  你可以使用 **𝖦𝗂𝗍𝗁𝗎𝖻 𝖯𝖺𝗀𝖾𝗌** 或 **Coding Pages** 向世界展示，未来将支持更多平台  
-
-💬  你可以进行简单的配置，接入 [Gitalk](https://github.com/gitalk/gitalk) 或 [DisqusJS](https://github.com/SukkaW/DisqusJS) 评论系统  
-
-🇬🇧  你可以使用**中文简体**或**英语**  
-
-🌁  你可以任意使用应用内默认主题或任意第三方主题，强大的主题自定义能力  
-
-🖥  你可以自定义源文件夹，利用 OneDrive、百度网盘、iCloud、Dropbox 等进行多设备同步  
-
-🌱 当然 **Gridea** 还很年轻，有很多不足，但请相信，它会不停向前 🏃
-
-未来，它一定会成为你离不开的伙伴
-
-尽情发挥你的才华吧！
-
-😘 Enjoy~
-</code></pre>
-<p><em>工具</em><br>
-<a href="https://tool.lu/tables/">markdown表格生成 - 在线工具</a></p>
-]]></content>
-    </entry>
-</feed>
+    </div>
+</div>
+</body>
+</html>
