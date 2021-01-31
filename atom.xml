@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://WinterStarHu.github.io</id>
     <title>WinterStarHu Go语言</title>
-    <updated>2021-01-31T05:22:40.775Z</updated>
+    <updated>2021-01-31T07:09:27.441Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://WinterStarHu.github.io"/>
     <link rel="self" href="https://WinterStarHu.github.io/atom.xml"/>
@@ -20,6 +20,86 @@
 ]]></summary>
         <content type="html"><![CDATA[<p>入门篇 day2 😁</p>
 <!-- more -->
+<h1 id="规则学习"><strong>规则学习</strong></h1>
+<h2 id="匿名函数">  <em>匿名函数</em></h2>
+<p>函数作为函数变量使用，甚至可以直接在函数参数声明匿名函数。<br>
+即将函数作为参数使用</p>
+<details>
+<summary>展开查看示例代码</summary>
+<pre><code>
+```
+package main
+import (
+	"fmt"
+	"math"
+)
+func main() {
+	// 调用函数，对每个元素进行求平方根操作
+	arr := []float64{1, 9, 16, 25, 30}
+	visit(arr, func(v float64) {v = math.Sqrt(v); fmt.Printf("%.2f \n", v)})
+	// 调用函数，对每个元素进行求平方根操作
+	visit(arr, func(v float64) {v = math.Pow(v, 2);fmt.Printf("%.0f \n", v)})
+}
+// 定义一个函数，遍历切片元素，对每个元素进行处理
+func visit(list []float64, f func(float64)) {
+	for _, value := range list {
+		f(value)
+	}
+}
+```
+</code></pre>
+</details>
+<h2 id="闭包">  <em>闭包</em></h2>
+<p>函数的返回值是一个函数，闭包描述了数据的行为。因为外层函数返回值是一个函数，所以虽然调用的外层函数被释放了，但是内层函数没有释放，且内层函数所使用的变量也没有释放。<br>
+<img src="https://www.hualigs.cn/image/601651010093f.jpg" alt="闭包分析示例" loading="lazy"><br>
+<img src="https://www.hualigs.cn/image/60165756c5032.jpg" alt="闭包分析示例" loading="lazy"></p>
+<details>
+<summary>展开查看示例代码</summary>
+<pre><code>
+```
+package main
+<p>import &quot;fmt&quot;</p>
+<p>func main() {<br>
+/*<br>
+闭包(closure):<br>
+一个外层函数中，有内层函数，回操作外层函数的局部变量(外层函数中的参数，或者外层函数中直接定义的变量)。<br>
+并且外层函数的返回值就是这个内层函数。</p>
+<pre><code>这个内层函数和外层函数的局部变量，统称为闭包结构。
+
+局部变量的生命周期会发生改变，正常的局部变量随着函数调用而创建，随着函数的结束而销毁
+但是闭包结构中的外层函数的局部变量并不会随着外层函数的结束而销毁，因为内层函数还要继续使用
+*/
+res1 := increment()
+fmt.Printf(&quot;%T\n&quot;,res1) //func() int
+fmt.Println(res1)
+v1:=res1()
+fmt.Println(v1) //1
+v2:=res1()
+fmt.Println(v2) //2
+
+res2 := increment()
+fmt.Println(res2)
+v3 := res2()
+fmt.Println(v3) //1
+fmt.Println(res1()) //3
+fmt.Println(res2()) //2
+</code></pre>
+<p>}</p>
+<p>func increment() func() int{ //外层函数<br>
+i := 0<br>
+fun := func() int{ //内层函数<br>
+i++<br>
+return i<br>
+}<br>
+return fun<br>
+}</p>
+<pre><code>&lt;/code&gt;&lt;/pre&gt;
+&lt;/details&gt;
+
+# **参考**
+[Go语言（Golang）教程](http://www.weixueyuan.net/go/)
+[千峰教育 go语言视频教程](https://www.bilibili.com/video/BV1jJ411c7s3)
+[闭包 视频讲解](https://www.bilibili.com/video/BV1jJ411c7s3?p=78)</code></pre>
 ]]></content>
     </entry>
     <entry>
@@ -676,7 +756,8 @@ unicode 字符集中汉字的范围是 4e00～9fa5，十进制范围是 19968～
 <a href="https://blog.csdn.net/djzhao627/article/details/89977411">markdown实现折叠操作</a><br>
 <a href="https://www.zhihu.com/question/427884544">表格折叠</a><br>
 <a href="https://zhuanlan.zhihu.com/p/93239297">指定表格列宽</a><br>
-<a href="https://www.jianshu.com/p/61f6e84619de">markdown添加空格</a></p>
+<a href="https://www.jianshu.com/p/61f6e84619de">markdown添加空格</a><br>
+<a href="https://www.hualigs.cn/simple">图床</a></p>
 ]]></content>
     </entry>
 </feed>
