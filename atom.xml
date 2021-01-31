@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://WinterStarHu.github.io</id>
     <title>WinterStarHu Go语言</title>
-    <updated>2021-01-31T07:50:54.635Z</updated>
+    <updated>2021-01-31T13:07:12.238Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://WinterStarHu.github.io"/>
     <link rel="self" href="https://WinterStarHu.github.io/atom.xml"/>
@@ -10,6 +10,48 @@
     <logo>https://WinterStarHu.github.io/images/avatar.png</logo>
     <icon>https://WinterStarHu.github.io/favicon.ico</icon>
     <rights>All rights reserved 2021, WinterStarHu Go语言</rights>
+    <entry>
+        <title type="html"><![CDATA[LeetCode优化方式]]></title>
+        <id>https://WinterStarHu.github.io/post/leetcode-you-hua-fang-shi/</id>
+        <link href="https://WinterStarHu.github.io/post/leetcode-you-hua-fang-shi/">
+        </link>
+        <updated>2021-01-31T10:30:21.000Z</updated>
+        <summary type="html"><![CDATA[<p>观察代码差异，看看如何降低复杂度和内存。</p>
+]]></summary>
+        <content type="html"><![CDATA[<p>观察代码差异，看看如何降低复杂度和内存。</p>
+<!-- more -->
+<p>最重要的是追求时间复杂度和空间复杂度最好，而不是追求代码编写方式导致的差异<br>
+以下是两数之和，思想均是判断数组中的值与target的差是否在map中，如果不在就添加至map，在的话就返回。但是两种不同的编写方式却会导致执行用时有差异。</p>
+<pre><code>func twoSum(nums []int, target int) []int {
+	dMap := make(map[int]int)
+	for idx,val := range nums{
+		minus := target-val
+		if _,ok := dMap[minus];ok {
+			return []int{dMap[minus],idx}
+		}else {
+			dMap[val]=idx
+		}
+	}
+	return nil
+}
+</code></pre>
+<p>执行用时：0 ms	内存消耗：3 MB</p>
+<pre><code>func twoSum(nums []int, target int) []int {
+	var dMap = make(map[int]int)
+	for idx, val := range nums {
+		_, ok := dMap[target-val]
+		if ok {
+			return []int{idx, dMap[target-val]}
+		} else {
+			dMap[val] = idx
+		}
+	}
+	return nil
+}
+</code></pre>
+<p>执行用时：8 ms	内存消耗：3 MB</p>
+]]></content>
+    </entry>
     <entry>
         <title type="html"><![CDATA[Go HelloWorld-2]]></title>
         <id>https://WinterStarHu.github.io/post/go-helloworld-2/</id>
@@ -120,6 +162,8 @@ slice，map。。</p>
 ]]></summary>
         <content type="html"><![CDATA[<p>记录刷题历程</p>
 <!-- more -->
+<h1 id="array"><strong>Array</strong></h1>
+<h2 id="1-two-sum"><em>1. <a href="https://leetcode-cn.com/problems/two-sum/">Two Sum</a></em></h2>
 <h1 id="参考"><em>参考</em></h1>
 <p><a href="https://books.halfrost.com/leetcode/">LeetCode Cookbook</a><br>
 <a href="https://leetcode-cn.com/">力扣</a><br>
