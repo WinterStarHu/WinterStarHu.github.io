@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://WinterStarHu.github.io</id>
     <title>WinterStarHu Go语言</title>
-    <updated>2021-01-31T07:14:44.975Z</updated>
+    <updated>2021-01-31T07:18:35.895Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://WinterStarHu.github.io"/>
     <link rel="self" href="https://WinterStarHu.github.io/atom.xml"/>
@@ -55,30 +55,26 @@ func visit(list []float64, f func(float64)) {
 <img src="https://www.hualigs.cn/image/60165756c5032.jpg" alt="闭包分析示例">
 <img src="https://www.hualigs.cn/image/60165756c5032.jpg" alt="闭包分析示例">
 </p></details>
+<p>闭包(closure):<br>
+一个外层函数中，有内层函数，回操作外层函数的局部变量(外层函数中的参数，或者外层函数中直接定义的变量)。<br>
+并且外层函数的返回值就是这个内层函数。</p>
+<p>这个内层函数和外层函数的局部变量，统称为闭包结构。</p>
+<p>局部变量的生命周期会发生改变，正常的局部变量随着函数调用而创建，随着函数的结束而销毁<br>
+但是闭包结构中的外层函数的局部变量并不会随着外层函数的结束而销毁，因为内层函数还要继续使用</p>
 <details>
 <summary>展开查看示例代码</summary>
 <pre><code>
 package main
 <p>import &quot;fmt&quot;</p>
 <p>func main() {<br>
-/*<br>
-闭包(closure):<br>
-一个外层函数中，有内层函数，回操作外层函数的局部变量(外层函数中的参数，或者外层函数中直接定义的变量)。<br>
-并且外层函数的返回值就是这个内层函数。</p>
-<pre><code>这个内层函数和外层函数的局部变量，统称为闭包结构。
-
-局部变量的生命周期会发生改变，正常的局部变量随着函数调用而创建，随着函数的结束而销毁
-但是闭包结构中的外层函数的局部变量并不会随着外层函数的结束而销毁，因为内层函数还要继续使用
-*/
-res1 := increment()
-fmt.Printf(&quot;%T\n&quot;,res1) //func() int
-fmt.Println(res1)
-v1:=res1()
-fmt.Println(v1) //1
-v2:=res1()
-fmt.Println(v2) //2
-
-res2 := increment()
+res1 := increment()<br>
+fmt.Printf(&quot;%T\n&quot;,res1) //func() int<br>
+fmt.Println(res1)<br>
+v1:=res1()<br>
+fmt.Println(v1) //1<br>
+v2:=res1()<br>
+fmt.Println(v2) //2</p>
+<pre><code>res2 := increment()
 fmt.Println(res2)
 v3 := res2()
 fmt.Println(v3) //1
