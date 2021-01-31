@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://WinterStarHu.github.io</id>
     <title>WinterStarHu Go语言</title>
-    <updated>2021-01-31T07:18:35.895Z</updated>
+    <updated>2021-01-31T07:21:27.326Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://WinterStarHu.github.io"/>
     <link rel="self" href="https://WinterStarHu.github.io/atom.xml"/>
@@ -64,33 +64,34 @@ func visit(list []float64, f func(float64)) {
 <details>
 <summary>展开查看示例代码</summary>
 <pre><code>
+```
 package main
-<p>import &quot;fmt&quot;</p>
-<p>func main() {<br>
-res1 := increment()<br>
-fmt.Printf(&quot;%T\n&quot;,res1) //func() int<br>
-fmt.Println(res1)<br>
-v1:=res1()<br>
-fmt.Println(v1) //1<br>
-v2:=res1()<br>
-fmt.Println(v2) //2</p>
-<pre><code>res2 := increment()
-fmt.Println(res2)
-v3 := res2()
-fmt.Println(v3) //1
-fmt.Println(res1()) //3
-fmt.Println(res2()) //2
+import "fmt"
+func main() {
+	res1 := increment()
+	fmt.Printf("%T\n",res1) //func() int
+	fmt.Println(res1)
+	v1:=res1()
+	fmt.Println(v1) //1
+	v2:=res1()
+	fmt.Println(v2) //2
+	res2 := increment()
+	fmt.Println(res2)
+	v3 := res2()
+	fmt.Println(v3) //1
+	fmt.Println(res1()) //3
+	fmt.Println(res2()) //2
+}
+func increment() func() int{ //外层函数
+	i := 0
+	fun := func() int{ //内层函数
+		i++
+		return i
+	}
+	return fun
+}
+```
 </code></pre>
-<p>}</p>
-<p>func increment() func() int{ //外层函数<br>
-i := 0<br>
-fun := func() int{ //内层函数<br>
-i++<br>
-return i<br>
-}<br>
-return fun<br>
-}<br>
-</code></pre></p>
 </details>
 <h1 id="参考"><strong>参考</strong></h1>
 <p><a href="http://www.weixueyuan.net/go/">Go语言（Golang）教程</a><br>
