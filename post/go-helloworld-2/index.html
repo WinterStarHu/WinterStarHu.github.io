@@ -7,7 +7,7 @@
 
 <title>Go HelloWorld-2 | WinterStarHu Go语言</title>
 
-<link rel="shortcut icon" href="https://WinterStarHu.github.io/favicon.ico?v=1612077685230">
+<link rel="shortcut icon" href="https://WinterStarHu.github.io/favicon.ico?v=1612079435550">
 
 <link href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" rel="stylesheet">
 <link rel="stylesheet" href="https://WinterStarHu.github.io/styles/main.css">
@@ -124,7 +124,7 @@
             
         </div>
         <div style="text-align: center">
-            <form id="gridea-search-form" style="position: relative" data-update="1612077685230" action="/search/index.html">
+            <form id="gridea-search-form" style="position: relative" data-update="1612079435550" action="/search/index.html">
                 <input class="search-input" autocomplete="off" spellcheck="false" name="q" placeholder="搜索文章" />
                 <i class="fas fa-search gt-c-content-color-first" style="position: absolute; top: 9px; left: 10px;"></i>
             </form>
@@ -273,6 +273,17 @@ func increment() func() int{ //外层函数
 ```
 </code></pre>
 </details>
+<p>##  <em>值传递和引用传递的细节问题</em></p>
+<blockquote>
+<p>Go语言中所有的传参都是值传递（传值），都是一个副本。副本的内容有的是值类型（int、string、bool、array、struct 属于值类型），这样在函数中就无法修改原内容数据；有的是引用类型（pointer、slice、map、chan 属于引用类型），这样就可以修改原内容数据。<br>
+是否可以修改原内容数据，和传值、传引用没有必然的关系。在 C++ 中，传引用肯定是可以修改原内容数据的；在Go语言里，虽然只有传值，但是也可以修改原内容数据，因为参数可以是引用类型。<br>
+传引用和引用类型是两个概念。虽然Go语言只有传值一种方式，但是可以通过传引用类型变量达到与传引用一样的效果。<br>
+值类型：进行值传递的数据类型也叫值类型，存储的是数值本身。<br>
+将数据类型传递给其他的变量，传递的是数据的副本(备份)<br>
+int，float，string，bool，array<br>
+引用类型：理解为存储的数据的内存地址<br>
+slice，map。。</p>
+</blockquote>
 <h1 id="参考"><strong>参考</strong></h1>
 <p><a href="http://www.weixueyuan.net/go/">Go语言（Golang）教程</a><br>
 <a href="https://www.bilibili.com/video/BV1jJ411c7s3">千峰教育 go语言视频教程</a><br>
