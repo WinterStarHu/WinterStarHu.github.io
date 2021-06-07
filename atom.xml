@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://WinterStarHu.github.io</id>
     <title>WinterStarHu Go语言</title>
-    <updated>2021-01-31T14:51:37.571Z</updated>
+    <updated>2021-06-07T02:37:19.467Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://WinterStarHu.github.io"/>
     <link rel="self" href="https://WinterStarHu.github.io/atom.xml"/>
@@ -10,6 +10,59 @@
     <logo>https://WinterStarHu.github.io/images/avatar.png</logo>
     <icon>https://WinterStarHu.github.io/favicon.ico</icon>
     <rights>All rights reserved 2021, WinterStarHu Go语言</rights>
+    <entry>
+        <title type="html"><![CDATA[Go语言的背景知识]]></title>
+        <id>https://WinterStarHu.github.io/post/go-yu-yan-de-bei-jing-zhi-shi/</id>
+        <link href="https://WinterStarHu.github.io/post/go-yu-yan-de-bei-jing-zhi-shi/">
+        </link>
+        <updated>2021-04-21T09:27:57.000Z</updated>
+        <summary type="html"><![CDATA[<p>从黑马Go语言《Go语言与区块链》看见的背景知识</p>
+]]></summary>
+        <content type="html"><![CDATA[<p>从黑马Go语言《Go语言与区块链》看见的背景知识</p>
+<!-- more -->
+<h1 id="开发史">开发史</h1>
+<h1 id="应用">应用</h1>
+<ul>
+<li>区块链</li>
+</ul>
+<p>两个主流区块链底层系统：以太坊(智能合约)和Hyperledger Fabric</p>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[2021年02月22日Leetcode题解]]></title>
+        <id>https://WinterStarHu.github.io/post/2021-nian-02-yue-2-ri-leetcode-ti-jie/</id>
+        <link href="https://WinterStarHu.github.io/post/2021-nian-02-yue-2-ri-leetcode-ti-jie/">
+        </link>
+        <updated>2021-02-22T04:04:15.000Z</updated>
+        <summary type="html"><![CDATA[<p>766托普利茨矩阵</p>
+]]></summary>
+        <content type="html"><![CDATA[<p>766托普利茨矩阵</p>
+<!-- more -->
+<h1 id="766-托普利茨矩阵">766 托普利茨矩阵</h1>
+<p>两种方案：</p>
+<ol>
+<li>先遍历矩阵的第一行对应的对角线上元素，再遍历矩阵的第一列对应的对角线上的元素，当存在有值不相等时返回false，否则返回true即可得到答案。</li>
+<li>切片比较，将上一行元素的切片与下一行元素的右下切片比较<br>
+<img src="https://pic.leetcode-cn.com/1613953976-aVfMbj-766.gif" alt="" loading="lazy"></li>
+</ol>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[C++ 相关]]></title>
+        <id>https://WinterStarHu.github.io/post/c-xiang-guan/</id>
+        <link href="https://WinterStarHu.github.io/post/c-xiang-guan/">
+        </link>
+        <updated>2021-02-01T05:35:01.000Z</updated>
+        <summary type="html"><![CDATA[<p>C++相关</p>
+]]></summary>
+        <content type="html"><![CDATA[<p>C++相关</p>
+<!-- more -->
+<h1 id="环境配置"><strong>环境配置</strong></h1>
+<p>推荐使用vscode，并使用[AutoVsCEnv_WPF(https://github.com/SDchao/AutoVsCEnv_WPF/releases/latest)一键配置vscode环境</p>
+<h1 id="参考"><strong>参考</strong></h1>
+<p><a href="https://blog.csdn.net/a673519020/article/details/105591790/">20秒 一键配置 VSCode (Visual Studio Code) C/C++开发环境 !</a></p>
+]]></content>
+    </entry>
     <entry>
         <title type="html"><![CDATA[Anaconda相关命令]]></title>
         <id>https://WinterStarHu.github.io/post/anaconda-xiang-guan-ming-ling/</id>
@@ -210,29 +263,6 @@ slice，map。。</p>
 <p><a href="http://www.weixueyuan.net/go/">Go语言（Golang）教程</a><br>
 <a href="https://www.bilibili.com/video/BV1jJ411c7s3">千峰教育 go语言视频教程</a><br>
 <a href="https://www.bilibili.com/video/BV1jJ411c7s3?p=78">闭包 视频讲解</a></p>
-]]></content>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Go Leetcode]]></title>
-        <id>https://WinterStarHu.github.io/post/go-leetcode/</id>
-        <link href="https://WinterStarHu.github.io/post/go-leetcode/">
-        </link>
-        <updated>2021-01-30T12:11:12.000Z</updated>
-        <summary type="html"><![CDATA[<p>记录刷题历程</p>
-]]></summary>
-        <content type="html"><![CDATA[<p>记录刷题历程</p>
-<!-- more -->
-<h1 id="array"><strong>Array</strong></h1>
-<h2 id="简单">  <strong>简单</strong></h2>
-<h3 id="1-two-sum">    <em>1. <a href="https://leetcode-cn.com/problems/two-sum/">Two Sum</a></em></h3>
-<h2 id="中等">  <strong>中等</strong></h2>
-<h3 id="11-container-with-most-water">    <em>11. <a href="https://leetcode-cn.com/problems/container-with-most-water/">Container With Most Water</a></em></h3>
-<h2 id="困难">  <strong>困难</strong></h2>
-<h3 id="4median-of-two-sorted-arrays">    <em>4.<a href="https://leetcode-cn.com/problems/median-of-two-sorted-arrays">Median of Two Sorted Arrays</a></em></h3>
-<h1 id="参考"><em>参考</em></h1>
-<p><a href="https://books.halfrost.com/leetcode/">LeetCode Cookbook</a><br>
-<a href="https://leetcode-cn.com/">力扣</a><br>
-<a href="https://www.nowcoder.com/contestRoom">牛客网</a></p>
 ]]></content>
     </entry>
     <entry>
@@ -820,62 +850,30 @@ unicode 字符集中汉字的范围是 4e00～9fa5，十进制范围是 19968～
 ]]></content>
     </entry>
     <entry>
-        <title type="html"><![CDATA[Hello Makrdown]]></title>
-        <id>https://WinterStarHu.github.io/post/hello-gridea/</id>
-        <link href="https://WinterStarHu.github.io/post/hello-gridea/">
+        <title type="html"><![CDATA[小P帮您处理PDF]]></title>
+        <id>https://WinterStarHu.github.io/post/xiao-p-bang-nin-chu-li-pdf/</id>
+        <link href="https://WinterStarHu.github.io/post/xiao-p-bang-nin-chu-li-pdf/">
         </link>
-        <updated>2018-12-11T16:00:00.000Z</updated>
-        <summary type="html"><![CDATA[<p>本网站由Github Pages提供静态网页服务，Gridea提供写作服务和markdown代码转网页服务</p>
+        <updated>2020-03-12T06:27:28.000Z</updated>
+        <summary type="html"><![CDATA[<p><a href="https://github.com/WinterStarHu/Little_P"><u>GitHub项目</u></a></p>
 ]]></summary>
-        <content type="html"><![CDATA[<p>本网站由Github Pages提供静态网页服务，Gridea提供写作服务和markdown代码转网页服务</p>
+        <content type="html"><![CDATA[<p><a href="https://github.com/WinterStarHu/Little_P"><u>GitHub项目</u></a></p>
 <!-- more -->
-<p>以下是markdown语法：</p>
-<pre><code>👏  欢迎使用 **Gridea** ！  
-✍️  **Gridea** 一个静态博客写作客户端。你可以用它来记录你的生活、心情、知识、笔记、创意... ... 
-
-&lt;!-- more --&gt;
-
-[Github](https://github.com/getgridea/gridea)  
-[Gridea 主页](https://gridea.dev/)  
-[示例网站](http://fehey.com/)
-
-## 特性👇
-📝  你可以使用最酷的 **Markdown** 语法，进行快速创作  
-
-🌉  你可以给文章配上精美的封面图和在文章任意位置插入图片  
-
-🏷️  你可以对文章进行标签分组  
-
-📋  你可以自定义菜单，甚至可以创建外部链接菜单  
-
-💻  你可以在 **Windows**，**MacOS** 或 **Linux** 设备上使用此客户端  
-
-🌎  你可以使用 **𝖦𝗂𝗍𝗁𝗎𝖻 𝖯𝖺𝗀𝖾𝗌** 或 **Coding Pages** 向世界展示，未来将支持更多平台  
-
-💬  你可以进行简单的配置，接入 [Gitalk](https://github.com/gitalk/gitalk) 或 [DisqusJS](https://github.com/SukkaW/DisqusJS) 评论系统  
-
-🇬🇧  你可以使用**中文简体**或**英语**  
-
-🌁  你可以任意使用应用内默认主题或任意第三方主题，强大的主题自定义能力  
-
-🖥  你可以自定义源文件夹，利用 OneDrive、百度网盘、iCloud、Dropbox 等进行多设备同步  
-
-🌱 当然 **Gridea** 还很年轻，有很多不足，但请相信，它会不停向前 🏃
-
-未来，它一定会成为你离不开的伙伴
-
-尽情发挥你的才华吧！
-
-😘 Enjoy~
-</code></pre>
-<p><em>工具</em><br>
-<a href="https://tool.lu/tables/">markdown表格生成 - 在线工具</a><br>
-<a href="https://blog.csdn.net/djzhao627/article/details/89977411">markdown实现折叠操作</a><br>
-<a href="https://www.zhihu.com/question/427884544">表格折叠</a><br>
-<a href="https://www.jianshu.com/p/0f98573bf129">图片折叠</a><br>
-<a href="https://zhuanlan.zhihu.com/p/93239297">指定表格列宽</a><br>
-<a href="https://www.jianshu.com/p/61f6e84619de">markdown添加空格</a><br>
-<a href="https://www.hualigs.cn/simple">图床</a></p>
+<h2 id="功能">功能</h2>
+<ul>
+<li>这是一种旨在帮你处理pdf的一种软件</li>
+<li>可以根据pdf生成单词表，结合<a href="https://github.com/WinterStarHu/Little_E"><u>小E</u></a>可以实现导出xml</li>
+<li>可以根据pdf生成文字版</li>
+<li>可以生成英中翻译</li>
+</ul>
+<h2 id="安装库">安装库</h2>
+<p>pysimplegui,requests,pyexecjs</p>
+<h2 id="pysimplegui很漂亮了">pysimplegui很漂亮了！！</h2>
+<p>很喜欢进度条！<br>
+<a href="https://zhuanlan.zhihu.com/p/44871441"><u>介绍</u></a></p>
+<p><a href="https://pysimplegui.readthedocs.io/en/latest/cookbook/"><u>simplegui cookbook:</u></a></p>
+<h2 id="翻译和文字处理">翻译和文字处理</h2>
+<p>参照<a href="https://winterstarhu.github.io/post/xiao-e-jiao-nin-xue-ying-yu/"><u>小E</u></a>的介绍</p>
 ]]></content>
     </entry>
 </feed>
