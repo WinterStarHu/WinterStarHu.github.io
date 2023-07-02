@@ -1,0 +1,1186 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+    <id>https://WinterStarHu.github.io</id>
+    <title>WinterStarHu Go语言</title>
+    <updated>2023-07-02T12:57:17.243Z</updated>
+    <generator>https://github.com/jpmonette/feed</generator>
+    <link rel="alternate" href="https://WinterStarHu.github.io"/>
+    <link rel="self" href="https://WinterStarHu.github.io/atom.xml"/>
+    <subtitle>Feel free to contact me.</subtitle>
+    <logo>https://WinterStarHu.github.io/images/avatar.png</logo>
+    <icon>https://WinterStarHu.github.io/favicon.ico</icon>
+    <rights>All rights reserved 2023, WinterStarHu Go语言</rights>
+    <entry>
+        <title type="html"><![CDATA[Version]]></title>
+        <id>https://WinterStarHu.github.io/post/version/</id>
+        <link href="https://WinterStarHu.github.io/post/version/">
+        </link>
+        <updated>2023-07-02T12:47:41.000Z</updated>
+        <content type="html"><![CDATA[<p>1.0</p>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[NoteExpress高校版很好用！]]></title>
+        <id>https://WinterStarHu.github.io/post/noteexpress-gao-xiao-ban-hen-hao-yong/</id>
+        <link href="https://WinterStarHu.github.io/post/noteexpress-gao-xiao-ban-hen-hao-yong/">
+        </link>
+        <updated>2022-07-31T12:56:11.000Z</updated>
+        <content type="html"><![CDATA[<p>http://www.inoteexpress.com/download_chs.htm#Tutorials<br>
+任意选择一个高校版即可使用！</p>
+<p>Ref：https://baijiahao.baidu.com/s?id=1575884148799639</p>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[网址推荐]]></title>
+        <id>https://WinterStarHu.github.io/post/wang-zhi-tui-jian/</id>
+        <link href="https://WinterStarHu.github.io/post/wang-zhi-tui-jian/">
+        </link>
+        <updated>2022-02-28T16:45:11.000Z</updated>
+        <content type="html"><![CDATA[<!-- more -->
+<p>可以下载英文电子书的网站：https://vdoc.pub/，之前下过很多技术书籍<br>
+http://www.9871.org/ 综合搜索书籍</p>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[使用vscode代替typora]]></title>
+        <id>https://WinterStarHu.github.io/post/shi-yong-vscode-dai-ti-typora/</id>
+        <link href="https://WinterStarHu.github.io/post/shi-yong-vscode-dai-ti-typora/">
+        </link>
+        <updated>2022-02-16T12:32:43.000Z</updated>
+        <summary type="html"><![CDATA[<p>typora开始收费了，虽然很好用，但是望尘莫及，还是继续使用vscode吧。</p>
+]]></summary>
+        <content type="html"><![CDATA[<p>typora开始收费了，虽然很好用，但是望尘莫及，还是继续使用vscode吧。</p>
+<!-- more -->
+<h1 id="图床">图床</h1>
+<p>首先解决图片链接的问题，之前在typora也没使用过这个功能，这一次在vscode解决。<br>
+方法如下：<br>
+<a href="https://weiyexing.ml/posts/use-onedrive-to-pic-service/">使用OneDrive做图床</a></p>
+<p><a href="https://onedrive.gimhoy.com/">分享链转换为直链</a></p>
+<p>如下是使用Onedrive后转换为直链的结果：<br>
+<img src="https://link.jscdn.cn/sharepoint/aHR0cHM6Ly9tYWlsdXN0Y2VkdWNuLW15LnNoYXJlcG9pbnQuY29tLzppOi9nL3BlcnNvbmFsL2Rvbmd4aW5nX21haWxfdXN0Y19lZHVfY24vRVRCVGxPV1MwNlJEb2hsQWpucGo5eElCVGYyNlZ4b1RPaUhtMXBwOEtCMGpBQT9lPXhPQ2hSNQ.jpg" alt="" loading="lazy"></p>
+<h1 id="vscode插件">vscode插件</h1>
+<p><a href="https://zhuanlan.zhihu.com/p/56943330">vscode使用markdown指导</a><br>
+<a href="https://zhuanlan.zhihu.com/p/442554652">再见Typora！5分钟从Typora迁移到VScode！</a></p>
+<p>Markdown All in One<br>
+Markdown Shortcuts<br>
+Auto Markdown</p>
+<h1 id="思维导图">思维导图</h1>
+<p>GitMind免费使用</p>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Go Slice，Map，Struct排坑]]></title>
+        <id>https://WinterStarHu.github.io/post/go-slicemapstruct-pai-keng/</id>
+        <link href="https://WinterStarHu.github.io/post/go-slicemapstruct-pai-keng/">
+        </link>
+        <updated>2021-08-14T14:28:47.000Z</updated>
+        <summary type="html"><![CDATA[<p>收集帖 本帖主要收集关于Slice，Map，Struct遇到的坑，不定时更新，总结</p>
+]]></summary>
+        <content type="html"><![CDATA[<p>收集帖 本帖主要收集关于Slice，Map，Struct遇到的坑，不定时更新，总结</p>
+<!-- more -->
+<h1 id="slice">Slice</h1>
+<p>Slice底层是一个数组，在进行Slice赋值操作时，底层的数组是不改变的，只是Slice的可见长度改变了，容量也是会不变的。<a href="https://blog.csdn.net/skh2015java/article/details/79771799"><u>Slice的数据结构</u></a>是包含指针，长度，容量三个值的结构体。</p>
+<pre><code class="language-go">package main
+
+import &quot;fmt&quot;
+func changeSlice(arr []int){
+	fmt.Printf(&quot;changeSlice中传入的arr %p %v 长度：%d 容量%d\n&quot;,&amp;arr,arr,len(arr),cap(arr))
+	arr[0]++
+	fmt.Printf(&quot;changeSlice中传入的arr change后 %p %v 长度：%d 容量%d\n&quot;,&amp;arr,arr,len(arr),cap(arr))
+	arr=append(arr,0)
+	fmt.Printf(&quot;changeSlice中传入的arr add后 %p %v 长度：%d 容量%d\n&quot;,&amp;arr,arr,len(arr),cap(arr))
+}
+func main(){
+	arr1:=[]int{1,2,3}
+	arr2:=arr1
+	fmt.Printf(&quot;main的arr1 %p %v 长度：%d 容量%d \n&quot;,&amp;arr1,arr1,len(arr1),cap(arr1))
+	changeSlice(arr1)
+	fmt.Printf(&quot;main的arr1 change后 %p %v 长度：%d 容量%d \n&quot;,&amp;arr1,arr1,len(arr1),cap(arr1))
+
+	fmt.Printf(&quot;main的arr2 %p %v 长度：%d 容量%d\n&quot;,&amp;arr2,arr2,len(arr2),cap(arr2))
+	changeSlice(arr2)
+	fmt.Printf(&quot;main的arr2 change后 %p %v 长度：%d 容量%d\n&quot;,&amp;arr2,arr2,len(arr2),cap(arr2))
+}
+
+</code></pre>
+<p><em>输出</em></p>
+<pre><code>main的arr1 0xc000004078 [1 2 3] 长度：3 容量3 
+changeSlice中传入的arr 0xc0000040c0 [1 2 3] 长度：3 容量3
+changeSlice中传入的arr change后 0xc0000040c0 [2 2 3] 长度：3 容量3
+changeSlice中传入的arr add后 0xc0000040c0 [2 2 3 0] 长度：4 容量6
+main的arr1 change后 0xc000004078 [2 2 3] 长度：3 容量3 
+main的arr2 0xc000004090 [2 2 3] 长度：3 容量3
+changeSlice中传入的arr 0xc000004150 [2 2 3] 长度：3 容量3
+changeSlice中传入的arr change后 0xc000004150 [3 2 3] 长度：3 容量3
+changeSlice中传入的arr add后 0xc000004150 [3 2 3 0] 长度：4 容量6
+main的arr2 change后 0xc000004090 [3 2 3] 长度：3 容量3
+</code></pre>
+<p>仔细观察上面代码，可以得出以下结论：</p>
+<ol>
+<li>
+<p>Slice是值传递，因为无论是赋值还是函数传参，获取到的地址都是不一样的，<a href="https://blog.csdn.net/wplblog/article/details/113386932"><u>%p</u></a>表示获取指针</p>
+</li>
+<li>
+<p>虽然是值传递，这个值是指Slice指向的结构体的值，他们仍然共享同一个底层数组，修改变量时，arr改变了，arr1和arr2都会跟着改变</p>
+</li>
+<li>
+<p>注意append，当数组元素增加大于容量时，会发生扩容(扩容是2倍扩容，&gt;1000是1.5倍扩容)，这时候arr指向的数组和arr1和arr2指向的就不是同一块底层数组了。从函数退出后，arr1和arr2的元素值、长度和容量不同就可以看出来</p>
+</li>
+<li>
+<p>建议如果要对传入的arr进行修改，请必须返回修改后的arr！</p>
+<p>示例如下：</p>
+<pre><code>package main
+
+import &quot;fmt&quot;
+func changeSlice(arr []int)[]int{
+	fmt.Printf(&quot;changeSlice中传入的arr %p %v 长度：%d 容量%d\n&quot;,&amp;arr,arr,len(arr),cap(arr))
+	arr[0]++
+	fmt.Printf(&quot;changeSlice中传入的arr change后 %p %v 长度：%d 容量%d\n&quot;,&amp;arr,arr,len(arr),cap(arr))
+	arr=append(arr,0)
+	fmt.Printf(&quot;changeSlice中传入的arr add后 %p %v 长度：%d 容量%d\n&quot;,&amp;arr,arr,len(arr),cap(arr))
+	return arr
+}
+func main(){
+	arr1:=[]int{1,2,3}
+	arr2:=arr1
+	fmt.Printf(&quot;main的arr1 %p %v 长度：%d 容量%d \n&quot;,&amp;arr1,arr1,len(arr1),cap(arr1))
+	arr1=changeSlice(arr1)
+	fmt.Printf(&quot;main的arr1 change后 %p %v 长度：%d 容量%d \n&quot;,&amp;arr1,arr1,len(arr1),cap(arr1))
+
+	fmt.Printf(&quot;main的arr2 %p %v 长度：%d 容量%d\n&quot;,&amp;arr2,arr2,len(arr2),cap(arr2))
+	arr2=changeSlice(arr2)
+	fmt.Printf(&quot;main的arr2 change后 %p %v 长度：%d 容量%d\n&quot;,&amp;arr2,arr2,len(arr2),cap(arr2))
+}
+</code></pre>
+<p><em>输出</em></p>
+<pre><code>main的arr1 0xc000004078 [1 2 3] 长度：3 容量3 
+changeSlice中传入的arr 0xc0000040c0 [1 2 3] 长度：3 容量3
+changeSlice中传入的arr change后 0xc0000040c0 [2 2 3] 长度：3 容量3
+changeSlice中传入的arr add后 0xc0000040c0 [2 2 3 0] 长度：4 容量6
+main的arr1 change后 0xc000004078 [2 2 3 0] 长度：4 容量6 
+main的arr2 0xc000004090 [2 2 3] 长度：3 容量3
+changeSlice中传入的arr 0xc000004150 [2 2 3] 长度：3 容量3
+changeSlice中传入的arr change后 0xc000004150 [3 2 3] 长度：3 容量3
+changeSlice中传入的arr add后 0xc000004150 [3 2 3 0] 长度：4 容量6
+main的arr2 change后 0xc000004090 [3 2 3 0] 长度：4 容量6
+</code></pre>
+<h2 id="for-range">for range</h2>
+<pre><code class="language-go">package main
+
+import &quot;fmt&quot;
+func main(){
+	arr:=[]int{1,2,3}
+	for ind,val:=range arr{
+		fmt.Printf(&quot;val %p %v\n&quot;,&amp;val,val)
+		fmt.Printf(&quot;arr[ind] %p %v\n&quot;,&amp;arr[ind],arr[ind])
+		val++
+		fmt.Printf(&quot;add后 val %p %v\n&quot;,&amp;val,val)
+		fmt.Printf(&quot;add后 arr[ind] %p %v\n&quot;,&amp;arr[ind],arr[ind])
+	}
+}
+
+</code></pre>
+<p><em>输出</em></p>
+<pre><code>val 0xc00000a098 1
+arr[ind] 0xc000012150 1
+add后 val 0xc00000a098 2
+add后 arr[ind] 0xc000012150 1
+val 0xc00000a098 2
+arr[ind] 0xc000012158 2
+add后 val 0xc00000a098 3
+add后 arr[ind] 0xc000012158 2
+val 0xc00000a098 3
+arr[ind] 0xc000012160 3
+add后 val 0xc00000a098 4
+add后 arr[ind] 0xc000012160 3
+</code></pre>
+<p>通过代码可以得出如下结论：</p>
+<ol>
+<li>for range得到的val的地址是同一个，只是每次更新值</li>
+<li>修改val对Slice不会造成任何影响！</li>
+</ol>
+<h1 id="map">Map</h1>
+<ul>
+<li>Map的Key必须是<a href="https://blog.csdn.net/guangcheng0312q/article/details/106416799"><u>可比较的类型</u></a>，Slice，channel，map不可比较，另外结构体是否可比较是根据结构体中的元素判断的。</li>
+</ul>
+<pre><code class="language-go">package main
+
+import &quot;fmt&quot;
+
+func main(){
+	a:=make(chan int,1)
+	b:=make(chan int,1)
+	a&lt;-1
+	b&lt;-1
+	if a==b{
+		fmt.Println(&quot;可比较&quot;)
+	}
+}
+</code></pre>
+<p>chan虽然不报错，但是上述代码并不能得出正确的比较结果，而Slice和Map一旦作比较就报错了。</p>
+<ul>
+<li>Map使用时，必须要初始化</li>
+</ul>
+<p>也就是</p>
+<pre><code class="language-go">var a map[int]int
+a:=make(map[]int,0)
+</code></pre>
+<p>第一个是声明，第二个是初始化</p>
+<ul>
+<li>Map的Val是结构体时，一定要使用结构体指针传值，否则无法修改结构体元素</li>
+</ul>
+<pre><code class="language-go">package main
+
+import &quot;fmt&quot;
+
+type person struct {
+	name string
+	age int
+}
+func main(){
+	a:=make(map[string]person)
+	a[&quot;007&quot;]=person{&quot;小花&quot;,15}
+	a[&quot;008&quot;]=person{&quot;小刘&quot;,18}
+	fmt.Println(a)
+	a[&quot;008&quot;].name=&quot;小白&quot;
+}
+</code></pre>
+<p>最后一行 a[&quot;008&quot;].name=&quot;小白&quot;是错的</p>
+<pre><code class="language-go">package main
+
+import &quot;fmt&quot;
+
+type person struct {
+	name string
+	age int
+}
+func main(){
+	a:=make(map[string]*person)
+	a[&quot;007&quot;]=&amp;person{&quot;小花&quot;,15}
+	a[&quot;008&quot;]=&amp;person{&quot;小刘&quot;,18}
+	fmt.Println(a)
+	a[&quot;008&quot;].name=&quot;小白&quot;
+	fmt.Println(a[&quot;008&quot;])
+}
+</code></pre>
+<p>所以传结构体时，使用指针传递最好</p>
+<h1 id="struct">Struct</h1>
+<pre><code class="language-go">package main
+
+import &quot;fmt&quot;
+
+type person struct {
+	name string
+	age int
+}
+func changeStruct(p person){
+	fmt.Println(&quot;changeStruct person %p %v&quot;,&amp;p,p)
+	p.age=17
+	fmt.Println(&quot;changeStruct person change后 %p %v&quot;,&amp;p,p)
+}
+func main(){
+	person1:=person{&quot;小刘&quot;,18}
+	fmt.Println(&quot;main person1 %p %v&quot;,&amp;person1,person1)
+	changeStruct(person1)
+	fmt.Println(&quot;main person1 change后 %p %v&quot;,&amp;person1,person1)
+}
+
+</code></pre>
+<p><em>输出</em></p>
+<pre><code>main person1 %p %v &amp;{小刘 18} {小刘 18}
+changeStruct person %p %v &amp;{小刘 18} {小刘 18}
+changeStruct person change后 %p %v &amp;{小刘 17} {小刘 17}
+main person1 change后 %p %v &amp;{小刘 18} {小刘 18}
+</code></pre>
+<p>从以上可以得出：</p>
+<ol>
+<li>Struct是值传递，传入的只是Struct值，所以会经过值拷贝，这样也消耗很大</li>
+<li>不如传入指针</li>
+</ol>
+<pre><code class="language-go">package main
+
+import &quot;fmt&quot;
+
+type person struct {
+	name string
+	age int
+}
+func changeStruct(p *person){
+	fmt.Println(&quot;changeStruct person %p %v&quot;,&amp;p,p)
+	p.age=17
+	fmt.Println(&quot;changeStruct person change后 %p %v&quot;,&amp;p,p)
+}
+func main(){
+	person1:=person{&quot;小刘&quot;,18}
+	fmt.Println(&quot;main person1 %p %v&quot;,&amp;person1,person1)
+	changeStruct(&amp;person1)
+	fmt.Println(&quot;main person1 change后 %p %v&quot;,&amp;person1,person1)
+}
+
+</code></pre>
+<p><em>输出</em></p>
+<pre><code>main person1 %p %v &amp;{小刘 18} {小刘 18}
+changeStruct person %p %v 0xc000006030 &amp;{小刘 18}
+changeStruct person change后 %p %v 0xc000006030 &amp;{小刘 17}
+main person1 change后 %p %v &amp;{小刘 17} {小刘 17}
+</code></pre>
+<blockquote>
+<p>注：结构体指针和结构体调用成员的方法是一样的，都是p.name，当然对于结构体指针也支持（*p).name，对于结构体也支持&amp;p.name。</p>
+</blockquote>
+</li>
+</ol>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Go 覆盖测试]]></title>
+        <id>https://WinterStarHu.github.io/post/go-fu-gai-ce-shi/</id>
+        <link href="https://WinterStarHu.github.io/post/go-fu-gai-ce-shi/">
+        </link>
+        <updated>2021-08-14T12:59:26.000Z</updated>
+        <summary type="html"><![CDATA[<p><a href="https://blog.csdn.net/weixin_30546933/article/details/99221474"><u>cover</u></a>  <a href="https://www.cnblogs.com/JenningsMao/p/9240965.html">转载</a></p>
+]]></summary>
+        <content type="html"><![CDATA[<p><a href="https://blog.csdn.net/weixin_30546933/article/details/99221474"><u>cover</u></a>  <a href="https://www.cnblogs.com/JenningsMao/p/9240965.html">转载</a></p>
+<!-- more -->
+<p>覆盖是指测试文件对函数的覆盖率是多少</p>
+<p><em>命令</em></p>
+<pre><code>go test -cover
+</code></pre>
+<p><em>输出</em></p>
+<pre><code>PASS
+coverage: 100.0% of statements
+ok      awesomeProject/Search   0.120s
+</code></pre>
+<p>我们的覆盖率是100%，<strong>我们想看看具体的情况</strong></p>
+<p><em>命令</em></p>
+<pre><code>go test -coverprofile=coverage.out
+</code></pre>
+<p>上述命令会输出文件</p>
+<p><em>读取命令</em></p>
+<pre><code>go tool cover -func=coverage.out
+</code></pre>
+<p><em>输出</em></p>
+<pre><code>awesomeProject/Search/Search.go:5:      BinarySearch1   100.0%
+awesomeProject/Search/Search.go:13:     BinarySearch2   100.0%
+total:                                  (statements)    100.0%
+</code></pre>
+<p>但是这个很不直观，我们可以用一个<strong>更清晰的HTML页面</strong>来显示结果：</p>
+<p><em>命令</em></p>
+<pre><code>go tool cover -html=coverage.out
+</code></pre>
+<p><em>输出</em></p>
+<figure data-type="image" tabindex="1"><img src="https://www.hualigs.cn/image/6117c00ba59e9.jpg" alt="" loading="lazy"></figure>
+<p>html网页，其中绿色表示覆盖的，红色表示未覆盖的</p>
+<p><strong>更精细的控制</strong></p>
+<p>这种代码级别的覆盖测试工具还有其他作用。比如它不仅仅可以告诉你一条语句是否被执行了，还可以告诉你它执行了多少次。</p>
+<p><code>go test</code> 接受 <code>-covermode</code>参数，一共有三种设置：</p>
+<ul>
+<li>set（默认）：每条语句是否被执行了？</li>
+<li>count：每条语句被执行了多少次？</li>
+<li>atomic：和count相似，但是能够在并行程序中精确计数（使用了 <a href="https://golang.org/pkg/sync/atomic/">sync/atomic</a> 包）。</li>
+</ul>
+<p>可以按照上述方式重新进行测试，可以看到在html界面中不同覆盖率的语句用不同的颜色表示出来了。</p>
+<p><em>命令</em></p>
+<pre><code>go test -coverprofile=coverage.out --covermode=count
+</code></pre>
+<p><em>读取</em></p>
+<pre><code>go tool cover -html=coverage.out
+</code></pre>
+<p><em>输出</em></p>
+<figure data-type="image" tabindex="2"><a href="https://www.hualigs.cn/image/6117c17c88487.jpg"><img src="https://www.hualigs.cn/image/6117c17c88487.jpg" alt="" loading="lazy"></a></figure>
+<p><strong>参考</strong></p>
+<p><a href="https://blog.csdn.net/xiaosongluo/article/details/80292894">统计 Golang 项目的测试覆盖率</a></p>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Go性能测试]]></title>
+        <id>https://WinterStarHu.github.io/post/go-xing-neng-ce-shi/</id>
+        <link href="https://WinterStarHu.github.io/post/go-xing-neng-ce-shi/">
+        </link>
+        <updated>2021-08-14T09:30:29.000Z</updated>
+        <summary type="html"><![CDATA[<p><a href="https://studygolang.com/pkgdoc"><u>Benchmarks</u></a></p>
+]]></summary>
+        <content type="html"><![CDATA[<p><a href="https://studygolang.com/pkgdoc"><u>Benchmarks</u></a></p>
+<!-- more -->
+<p>在<a href="https://winterstarhu.github.io/post/go-dan-yuan-ce-shi/"><u>Go 单元测试</u></a>中，只是验证了算法的正确性，对于算法的复杂度只是从一次结果判断，实际上，如果考虑多次的算法时间复杂度，看看算法的性能就需要使用Benchmarks。</p>
+<p>Benchmarks的使用仍然需要在_test.go文件中，并且开头是Benchmark，形参必须是b *testing.B。</p>
+<p>我们接着对<a href="https://winterstarhu.github.io/post/go-dan-yuan-ce-shi/"><u>Go 单元测试</u></a>的例子中，Search_test.go文件添加如下函数</p>
+<p><em>Search_test.go</em></p>
+<pre><code>func BenchmarkBinarySearch1(b *testing.B) {
+	arr:=make([]int,0)
+	for i:=0;i&lt;100000;i++{
+		arr=append(arr,i)
+	}
+	for i:=0;i&lt;b.N;i++{
+		BinarySearch1(arr,rand.Int()%100000)
+	}
+}
+func BenchmarkBinarySearch2(b *testing.B) {
+	arr:=make([]int,0)
+	for i:=0;i&lt;100000;i++{
+		arr=append(arr,i)
+	}
+	for i:=0;i&lt;b.N;i++{
+		BinarySearch2(arr,rand.Int()%100000)
+	}
+}
+</code></pre>
+<p>运行时，需要加上-bench</p>
+<p>基准函数会运行目标代码 b.N 次。在基准执行期间，会调整 b.N 直到基准测试函数持续足够长的时间。表明b.N是不确定的值，这是为了准确得到算法的性能。</p>
+<p>对于足够长的时间，<a href="https://blog.csdn.net/qq_28119741/article/details/117935237"><u>下面</u></a>是指1s以上</p>
+<blockquote>
+<p>b.N 从 1 开始，如果基准函数在 1 秒内就执行完了，那么 b.N 的值会递增以便基准函数再重新执行，即基准函数默认要运行 1 秒，如果该函数的执行时间在 1 秒内就运行完了，那么就递增 b.N 的值，重新再执行一次</p>
+</blockquote>
+<p><em>命令</em></p>
+<pre><code>go test -bench=. -run=none
+</code></pre>
+<p><em>输出</em></p>
+<pre><code>goos: windows
+goarch: amd64
+pkg: awesomeProject/Search
+cpu: Intel(R) Core(TM) i7-8550U CPU @ 1.80GHz
+BenchmarkBinarySearch1-8           45808             34748 ns/op
+BenchmarkBinarySearch2-8              92          14177941 ns/op
+PASS
+ok      awesomeProject/Search   4.278s
+</code></pre>
+<p><strong style="color:red;">解释</strong></p>
+<p><a href="https://blog.csdn.net/weixin_34649022/article/details/117086852"><u>参数介绍</u></a></p>
+<p>-bench=. ：表示的是运行所有的基准测试，. 表示全部。</p>
+<p>-run=none:表示过滤掉单元测试，不去跑UT的cases。</p>
+<p>输出的结果内容分析：goos: windows：表示的是操作系统是windows。</p>
+<p>goarch: amd64：表示目标平台的体系架构是amd64。</p>
+<p>BenchmarkBinarySearch1-8：BenchmarkBinarySearch1表示运行的函数名称； 8表示的是，运行时对应的GOMAXPROCS的值，此数字默认为启动时 Go 进程可见的 CPU 数。。</p>
+<p>45808 ：表示的是b.N的在1s以上的值，循环执行了 45808 次。</p>
+<p>34748ns/op：表示执行一次这个函数，消耗的时间是34748ns。</p>
+<h1 id="一些标志的解释">一些标志的解释</h1>
+<ol>
+<li><strong>-cpu可以定制cpu的数量</strong></li>
+</ol>
+<p><em>命令</em></p>
+<pre><code>go test -bench=. -cpu=1,2,4  -run=none
+</code></pre>
+<p><em>输出</em></p>
+<pre><code>goos: windows
+goarch: amd64
+pkg: awesomeProject/Search
+cpu: Intel(R) Core(TM) i7-8550U CPU @ 1.80GHz
+BenchmarkBinarySearch1             77134             16858 ns/op
+BenchmarkBinarySearch1-2           67426             17360 ns/op
+BenchmarkBinarySearch1-4           69294             16515 ns/op
+BenchmarkBinarySearch2               247           5035322 ns/op
+BenchmarkBinarySearch2-2             240           4969318 ns/op
+BenchmarkBinarySearch2-4             235           5096158 ns/op
+PASS
+ok      awesomeProject/Search   9.280s
+</code></pre>
+<p>不同CPU差别不大，因为没有涉及到并行吧</p>
+<ol start="2">
+<li><strong>-benchtime改变运行持续的时间，默认是大于1s，现在是大于10s</strong></li>
+</ol>
+<p><em>命令</em></p>
+<pre><code>go test -bench=. -benchtime=10s -run=none
+</code></pre>
+<p>-benchtime=10s:表示的是运行时间为10s，默认的时间是1s。</p>
+<p><em>输出</em></p>
+<pre><code>goos: windows
+goarch: amd64
+pkg: awesomeProject/Search
+cpu: Intel(R) Core(TM) i7-8550U CPU @ 1.80GHz
+BenchmarkBinarySearch1-8          775342             18227 ns/op
+BenchmarkBinarySearch2-8            1404           7309653 ns/op
+PASS
+ok      awesomeProject/Search   25.515s
+
+</code></pre>
+<ol start="3">
+<li><strong>通过-count 标志，可以指定基准测试多跑几次</strong></li>
+</ol>
+<p><em>命令</em></p>
+<pre><code>go test -bench=. -benchtime=2s -count=5 -run=none
+</code></pre>
+<p><em>输出</em></p>
+<pre><code>C:\Users\WinterStar\go\src\awesomeProject\Search&gt;go test -bench=. -benchtime=2s -count=5 -run=none
+goos: windows
+goarch: amd64
+pkg: awesomeProject/Search
+cpu: Intel(R) Core(TM) i7-8550U CPU @ 1.80GHz
+BenchmarkBinarySearch1-8          160483             15417 ns/op
+BenchmarkBinarySearch1-8          155282             14992 ns/op
+BenchmarkBinarySearch1-8          149983             15191 ns/op
+BenchmarkBinarySearch1-8          156448             14955 ns/op
+BenchmarkBinarySearch1-8          161452             15440 ns/op
+BenchmarkBinarySearch2-8             478           5082332 ns/op
+BenchmarkBinarySearch2-8             492           4918752 ns/op
+BenchmarkBinarySearch2-8             472           5147550 ns/op
+BenchmarkBinarySearch2-8             459           5138692 ns/op
+BenchmarkBinarySearch2-8             459           5126518 ns/op
+PASS
+ok      awesomeProject/Search   27.379s
+</code></pre>
+<h1 id="耗时管理">耗时管理</h1>
+<p>在启动或者循环过程中，存在耗时可能会影响函数的性能测试b.ResetTimer() 函数可以用于忽略启动的累积耗时</p>
+<p>如果在每次循环迭代中，你有一些费时的配置逻辑，要使用 b.StopTimer() 和 b.StartTimer() 函数来暂定基准测试计时器。</p>
+<pre><code class="language-go">func BenchmarkBinarySearch1(b *testing.B) {
+	arr:=make([]int,0)
+	for i:=0;i&lt;100000;i++{
+		arr=append(arr,i)
+	}
+	b.ResetTimer()
+	for i:=0;i&lt;b.N;i++{
+		b.StopTimer()
+		val:=rand.Int()%100000
+		b.StartTimer()
+		BinarySearch1(arr,val)
+	}
+}
+func BenchmarkBinarySearch2(b *testing.B) {
+	arr:=make([]int,0)
+	for i:=0;i&lt;100000;i++{
+		arr=append(arr,i)
+	}
+	b.ResetTimer()
+	for i:=0;i&lt;b.N;i++{
+		b.StopTimer()
+		val:=rand.Int()%100000
+		b.StartTimer()
+		BinarySearch2(arr,val)
+	}
+}
+</code></pre>
+<p><em>命令</em></p>
+<pre><code>go test -bench=. -run=none
+</code></pre>
+<p><em>输出</em></p>
+<pre><code>goos: windows
+goarch: amd64
+pkg: awesomeProject/Search
+cpu: Intel(R) Core(TM) i7-8550U CPU @ 1.80GHz
+BenchmarkBinarySearch1-8           66144             17916 ns/op
+BenchmarkBinarySearch2-8             226           4947265 ns/op
+PASS
+ok      awesomeProject/Search   5.016s
+</code></pre>
+<p>可以看见时间变短了。</p>
+<h1 id="内存分配">内存分配</h1>
+<p>内存分配的次数和分配的大小和基准测试的执行时间强相关。你可以通过在代码中增加 b.ReportAllocs() 函数来告诉 testing 框架记录内存分配的数据。</p>
+<pre><code class="language-go">func BenchmarkBinarySearch1(b *testing.B) {
+	b.ReportAllocs()
+	arr:=make([]int,0)
+	for i:=0;i&lt;100000;i++{
+		arr=append(arr,i)
+	}
+	b.ResetTimer()
+	for i:=0;i&lt;b.N;i++{
+		b.StopTimer()
+		val:=rand.Int()%100000
+		b.StartTimer()
+		BinarySearch1(arr,val)
+	}
+}
+func BenchmarkBinarySearch2(b *testing.B) {
+	b.ReportAllocs()
+	arr:=make([]int,0)
+	for i:=0;i&lt;100000;i++{
+		arr=append(arr,i)
+	}
+	b.ResetTimer()
+	for i:=0;i&lt;b.N;i++{
+		b.StopTimer()
+		val:=rand.Int()%100000
+		b.StartTimer()
+		BinarySearch2(arr,val)
+	}
+}
+</code></pre>
+<p><em>命令</em></p>
+<pre><code>go test -bench=. -run=none
+</code></pre>
+<p><em>输出</em></p>
+<pre><code>goos: windows
+goarch: amd64
+pkg: awesomeProject/Search
+cpu: Intel(R) Core(TM) i7-8550U CPU @ 1.80GHz
+BenchmarkBinarySearch1-8           67902             18285 ns/op               0 B/op          0 allocs/op
+BenchmarkBinarySearch2-8             248           4713975 ns/op              56 B/op          2 allocs/op
+PASS
+ok      awesomeProject/Search   5.098s
+</code></pre>
+<p>你也可以使用 go test -benchmem 标识来强制 testing 框架打印出所有基准测试的内存分配次数</p>
+<p>-benchmem:表示显示memory的指标。</p>
+<p><em>命令</em></p>
+<pre><code>go test -bench=. -benchmem -run=none
+</code></pre>
+<p><em>输出</em></p>
+<pre><code>goos: windows
+goarch: amd64
+pkg: awesomeProject/Search
+cpu: Intel(R) Core(TM) i7-8550U CPU @ 1.80GHz
+BenchmarkBinarySearch1-8           50349             23428 ns/op               0 B/op          0 allocs/op
+BenchmarkBinarySearch2-8             170           6705078 ns/op              56 B/op          2 allocs/op
+PASS
+ok      awesomeProject/Search   5.316s
+
+</code></pre>
+<p>0 B/op：表示每次执行操作，分配0B的内存。</p>
+<p>0 allocs/op：表示执行一次这个函数，分配内存的次数为1次。</p>
+<h1 id="收集基准测试数据">收集基准测试数据</h1>
+<p>该 testing 包内置了对生成 CPU，内存和模块配置文件的支持。</p>
+<ul>
+<li><strong>-cpuprofile=$FILE</strong> 收集 CPU 性能分析到 $FILE 文件</li>
+<li><strong>-memprofile=$FILE</strong>,将内存性能分析写入到 $FILE 文件，-memprofilerate=N 调节采样频率为 1/N</li>
+<li>-blockprofile=$FILE,输出内部 goroutine 阻塞的性能分析文件数据到 $FILE</li>
+</ul>
+<p><em>命令</em></p>
+<pre><code>go test -bench=. -benchmem -cpuprofile=c.p -run=none
+</code></pre>
+<p>上述命令会在当前目录下生成c.p的文件</p>
+<p><em>读取文件命令</em></p>
+<pre><code>go tool pprof c.p
+</code></pre>
+<p>使用上述命令可以读取到c.p的内容，并使用protobuf交互</p>
+<h2 id="交互命令">交互命令</h2>
+<p><strong>top命令</strong>可以查看cpu使用情况的前几名</p>
+<pre><code>(pprof) top
+Showing nodes accounting for 2440ms, 87.14% of 2800ms total
+Dropped 45 nodes (cum &lt;= 14ms)
+Showing top 10 nodes out of 58
+      flat  flat%   sum%        cum   cum%
+     880ms 31.43% 31.43%      880ms 31.43%  awesomeProject/Search.BinarySearch1
+     720ms 25.71% 57.14%      720ms 25.71%  awesomeProject/Search.BinarySearch2.func1
+     400ms 14.29% 71.43%     1080ms 38.57%  sort.doPivot_func
+     180ms  6.43% 77.86%      180ms  6.43%  runtime.stdcall1
+      90ms  3.21% 81.07%       90ms  3.21%  runtime.stdcall6
+      40ms  1.43% 82.50%       40ms  1.43%  runtime.(*mcache).releaseAll
+      40ms  1.43% 83.93%      140ms  5.00%  sort.insertionSort_func
+      30ms  1.07% 85.00%       30ms  1.07%  internal/reflectlite.Swapper.func5
+      30ms  1.07% 86.07%      140ms  5.00%  runtime.readmemstats_m
+      30ms  1.07% 87.14%       30ms  1.07%  runtime.updateTimerPMask
+
+</code></pre>
+<p><strong>解释</strong></p>
+<p>最后一列为函数名称，其他各项内容意义如下(<a href="https://blog.csdn.net/qq_28119741/article/details/109711641">转载</a>)：</p>
+<p>flat:当前函数占用CPU的耗时</p>
+<p>flat%:当前函数占用CPU的耗时百分比</p>
+<p>sum%:函数占用CPU的累积耗时百分比</p>
+<p>cum：当前函数+调用当前函数的占用CPU总耗时</p>
+<p>cum%: 当前函数+调用当前函数的占用CPU总耗时百分比</p>
+<p><strong>list 函数名</strong> 可以查看函数的cpu使用情况</p>
+<pre><code>(pprof) list List
+Total: 2.80s
+</code></pre>
+<p>可以list后面跟具体的函数</p>
+<pre><code>(pprof) list awesomeProject/Search.BinarySearch1
+Total: 2.80s
+ROUTINE ======================== awesomeProject/Search.BinarySearch1 in C:\Users\WinterStar\go\src\awesomeProject\Search\Search.go
+     880ms      880ms (flat, cum) 31.43% of Total
+         .          .      1:package Search
+         .          .      2:
+         .          .      3:import &quot;sort&quot;
+         .          .      4:
+         .          .      5:func BinarySearch1(arr []int,val int) bool{
+     430ms      430ms      6:   for i:=0;i&lt;len(arr);i++{
+     450ms      450ms      7:           if arr[i]==val{
+         .          .      8:                   return true
+         .          .      9:           }
+         .          .     10:   }
+         .          .     11:   return false
+         .          .     12:}
+
+</code></pre>
+<p>输入web，会打开本地浏览器查看pprof的svg图来分析</p>
+<figure data-type="image" tabindex="1"><img src="https://www.hualigs.cn/image/6117c6b393720.jpg" alt="Snipaste_2021-08-14_21-35-27.png" loading="lazy"></figure>
+<p>注意：</p>
+<p>这个web命令需要在生成的机器上安装<a href="http://www.graphviz.org/download/">graphviz</a></p>
+<h1 id="注意编译器的优化">注意编译器的优化</h1>
+<p>可以看看这篇博客<a href="https://blog.csdn.net/qq_28119741/article/details/117935237">https://blog.csdn.net/qq_28119741/article/details/117935237</a></p>
+<p>上面很多内容都参考该博客，非常感谢</p>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[GO 单元测试]]></title>
+        <id>https://WinterStarHu.github.io/post/go-dan-yuan-ce-shi/</id>
+        <link href="https://WinterStarHu.github.io/post/go-dan-yuan-ce-shi/">
+        </link>
+        <updated>2021-08-14T06:36:39.000Z</updated>
+        <summary type="html"><![CDATA[<p><a href="https://www.bilibili.com/video/BV1pt41127FZ?p=262">单元测试</a></p>
+]]></summary>
+        <content type="html"><![CDATA[<p><a href="https://www.bilibili.com/video/BV1pt41127FZ?p=262">单元测试</a></p>
+<!-- more -->
+<h1 id="简介">简介</h1>
+<p>单元测试是为了对函数或者模块的功能进行测试。以往，我们在调试程序的时候，是有main函数的，在main函数中对函数进行调用，然后观察运行结果是否正确。</p>
+<p>但是实际项目开发中，这样的操作手段存在很多隐患：</p>
+<ul>
+<li>多个测试用例在main中进行调用时，为了不调用某个测试用例就需要先注释掉然后再运行main</li>
+<li>由于在main中修改，会影响到程序主体架构，这样不利于版本的构建</li>
+</ul>
+<p>所以Go引入了Testing测试框架来进行单元测试。</p>
+<h1 id="基本规则">基本规则</h1>
+<ol>
+<li>为了使用Testing，需要引入<a href="https://studygolang.com/pkgdoc"><u>Testing包</u></a>。</li>
+<li>文件名以_test.go结尾是测试文件。</li>
+<li>在 _test.go 中编写测试用例时，函数以Test开头，且Test之后第一个字母不能是小写字母，因为go识别Test是根据驼峰命名法识别的。</li>
+<li>运行_test.go文件的方法是在测试文件所在目录下，输入命令go test
+<ul>
+<li>go test和go test  -v的区别是前者仅在有错误的情况下才会输出详细信息(正确仅输出PASS)，后者是任何情况都会输出详细信息</li>
+</ul>
+</li>
+</ol>
+<h2 id="例子">例子</h2>
+<p>例子是查找数组中的值，常规方法是O(N)，而排序后使用二分法是O(NlogN)（排序算法是O(NlogN)+二分是O(logN)）。</p>
+<p>在工程下新建Search文件夹，下面新建Search.go和Search_test.go文件</p>
+<p><strong>Search.go</strong></p>
+<pre><code class="language-go">package Search
+
+import &quot;sort&quot;
+
+func BinarySearch1(arr []int,val int) bool{
+	for i:=0;i&lt;len(arr);i++{
+		if arr[i]==val{
+			return true
+		}
+	}
+	return false
+}
+func BinarySearch2(arr []int,val int) bool{
+	sort.Slice(arr, func(i, j int) bool {
+		return arr[i]&lt;arr[j]
+	})
+	ind:=sort.Search(len(arr), func(i int) bool {
+		return arr[i]&lt;val
+	})
+	if ind&lt;len(arr) &amp;&amp; arr[ind]==val{
+		return true
+	}
+	return false
+}
+
+</code></pre>
+<p><strong>Search_test.go</strong></p>
+<pre><code class="language-go">package Search
+
+import (
+	&quot;log&quot;
+	&quot;testing&quot;
+)
+
+func TestBinarySearch1(t *testing.T) {
+	arr:=[]int{1,2,3,4,5}
+	val:=5
+	if !BinarySearch1(arr,val){
+		log.Fatalln(&quot;期望返回true，实际上返回false&quot;,val)
+	}
+	val=6
+	if BinarySearch1(arr,val){
+		log.Fatalln(&quot;期望返回false，实际上返回true&quot;,val)
+	}
+}
+func TestBinarySearch2(t *testing.T) {
+	arr:=[]int{1,2,3,4,5}
+	val:=5
+	if !BinarySearch2(arr,val){
+		log.Fatalln(&quot;期望返回true，实际上返回false&quot;)
+	}
+	val=6
+	if BinarySearch2(arr,val){
+		log.Fatalln(&quot;期望返回false，实际上返回true&quot;)
+	}
+}
+
+</code></pre>
+<p>上面Search_Test.go中的log.Fatalln就可以在有错误的情况下报错，从而告知Testing框架是否PASS</p>
+<p><em>命令</em></p>
+<pre><code>go test -v
+</code></pre>
+<p><em>输出</em></p>
+<pre><code>=== RUN   TestBinarySearch1
+--- PASS: TestBinarySearch1 (0.00s)
+=== RUN   TestBinarySearch2
+2021/08/14 16:48:09 期望返回true，实际上返回false
+exit status 1
+FAIL    awesomeProject/Search   0.305s
+
+</code></pre>
+<p>上述可以看见第二个用例没有通过，说明代码出现问题</p>
+<p>那么我们在修改部分错误代码修改后（修改可以通过<a href="https://blog.csdn.net/weixin_38976558/article/details/104817086"><u>调试，goland是支持调试测试函数的</u></a>）</p>
+<pre><code>func BinarySearch2(arr []int,val int) bool{
+	sort.Slice(arr, func(i, j int) bool {
+		return arr[i]&lt;arr[j]
+	})
+	ind:=sort.Search(len(arr), func(i int) bool {
+		return arr[i]&gt;=val
+	})
+	if ind&lt;len(arr) &amp;&amp; arr[ind]==val{
+		return true
+	}
+	return false
+}
+</code></pre>
+<p>如果我们只想测试第二个测试用例可以使用如下命令</p>
+<p><em>命令</em></p>
+<pre><code>go test -v -test.run TestBinarySearch2
+</code></pre>
+<p><em>输出</em></p>
+<pre><code>=== RUN   TestBinarySearch2
+--- PASS: TestBinarySearch2 (0.00s)
+PASS
+ok      awesomeProject/Search   0.323s
+
+</code></pre>
+<p>实际上，如果在目录下存在多个测试用例文件，我们还可以指定测试文件，<a href="https://blog.csdn.net/liuqun0319/article/details/109246599"><u>注意一定要带上测试的源文件</u></a></p>
+<p><em>命令</em></p>
+<pre><code>go test -v Search_test.go Search.go
+</code></pre>
+<p><em>输出</em></p>
+<pre><code>=== RUN   TestBinarySearch1
+--- PASS: TestBinarySearch1 (0.00s)
+=== RUN   TestBinarySearch2
+--- PASS: TestBinarySearch2 (0.00s)
+PASS
+ok      command-line-arguments  0.258s
+
+</code></pre>
+<p>上面的输出标出了几个时间，虽然看起来两个函数运行时间都是0.00s(太快以至于可以忽略不计)但是最后总时间是0.258s，这是因为Testing测试框架运行还需要时间。</p>
+<p>如果我将测试用例改为如下：</p>
+<pre><code class="language-go">func TestBinarySearch1(t *testing.T) {
+	arr:=[]int{1,2,3,4,5}
+	for i:=0;i&lt;100000;i++{
+		arr=append(arr,i)
+	}
+	val:=99999
+	if !BinarySearch1(arr,val){
+		log.Fatalln(&quot;期望返回true，实际上返回false&quot;)
+	}
+	val=100000
+	if BinarySearch1(arr,val){
+		log.Fatalln(&quot;期望返回false，实际上返回true&quot;)
+	}
+}
+func TestBinarySearch2(t *testing.T) {
+	arr:=[]int{1,2,3,4,5}
+	for i:=0;i&lt;100000;i++{
+		arr=append(arr,i)
+	}
+	val:=99999
+	if !BinarySearch2(arr,val){
+		log.Fatalln(&quot;期望返回true，实际上返回false&quot;)
+	}
+	val=100000
+	if BinarySearch2(arr,val){
+		log.Fatalln(&quot;期望返回false，实际上返回true&quot;)
+	}
+}
+</code></pre>
+<p><em>命令</em></p>
+<pre><code>go test -v Search_test.go Search.go
+</code></pre>
+<p><em>输出</em></p>
+<pre><code>=== RUN   TestBinarySearch1
+--- PASS: TestBinarySearch1 (0.01s)
+=== RUN   TestBinarySearch2
+--- PASS: TestBinarySearch2 (0.06s)
+PASS
+ok      command-line-arguments  0.389s
+
+</code></pre>
+<p>可以看出时间的差别。</p>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[GO JSON序列化和反序列化]]></title>
+        <id>https://WinterStarHu.github.io/post/go-json-xu-lie-hua-he-fan-xu-lie-hua/</id>
+        <link href="https://WinterStarHu.github.io/post/go-json-xu-lie-hua-he-fan-xu-lie-hua/">
+        </link>
+        <updated>2021-08-14T02:47:43.000Z</updated>
+        <summary type="html"><![CDATA[<p><a href="https://www.bilibili.com/video/BV1pt41127FZ?p=257&amp;spm_id_from=pageDriver"><u>Go JSON序列化和反序列化</u></a></p>
+]]></summary>
+        <content type="html"><![CDATA[<p><a href="https://www.bilibili.com/video/BV1pt41127FZ?p=257&amp;spm_id_from=pageDriver"><u>Go JSON序列化和反序列化</u></a></p>
+<!-- more -->
+<h1 id="json格式">JSON格式</h1>
+<p>JSON语法检查网址: <a href="www.json.cn"><u>www.json.cn</u></a><br>
+如下所示，JSON的键值对的键必须以&quot;&quot;双引号包裹，也就是key的类型必须是string，而val则随意。</p>
+<pre><code class="language-json">[
+    {
+        &quot;name&quot;:&quot;小花&quot;,
+        &quot;age&quot;:&quot;10&quot;,
+        &quot;adderss&quot;:&quot;中国&quot;
+    },
+    {
+        &quot;name&quot;:&quot;小刘&quot;,
+        &quot;age&quot;:10,
+        &quot;address&quot;:[
+            0,
+            1
+        ]
+    }
+]
+</code></pre>
+<h1 id="序列化">序列化</h1>
+<p><a href="https://studygolang.com/pkgdoc"><u>encoding/json包</u></a></p>
+<p>对上面的json数据，为了在go语言中构造，我们使用了[]map[string]interface这种slice，就能够得到上述一致的内容</p>
+<pre><code>package main
+
+import (
+	&quot;encoding/json&quot;
+	&quot;fmt&quot;
+)
+
+func main(){
+	jsonSlice:=make([]map[string]interface{},0)
+	jsonSlice=append(jsonSlice,make(map[string]interface{}))
+	jsonSlice[0][&quot;name&quot;]=&quot;小花&quot;
+	jsonSlice[0][&quot;age&quot;]=&quot;10&quot;
+	jsonSlice[0][&quot;address&quot;]=&quot;中国&quot;
+	jsonSlice=append(jsonSlice,make(map[string]interface{}))
+	jsonSlice[1][&quot;name&quot;]=&quot;小刘&quot;
+	jsonSlice[1][&quot;age&quot;]=10
+	jsonSlice[1][&quot;address&quot;]=[]int{0,1}
+	jsonString,err:=json.Marshal(jsonSlice)
+	if err!=nil{
+		fmt.Println(&quot;error&quot;)
+	}
+	fmt.Println(string(jsonString))
+
+}
+
+</code></pre>
+<p><em>输出</em></p>
+<pre><code>[{&quot;address&quot;:&quot;中国&quot;,&quot;age&quot;:&quot;10&quot;,&quot;name&quot;:&quot;小花&quot;},{&quot;address&quot;:[0,1],&quot;age&quot;:10,&quot;name&quot;:&quot;小刘&quot;}]
+</code></pre>
+<p>但是由于map可能存在不同的顺序(后文运行结果好像为字典序)，所以输出顺序和上面json输出的不一样，因此我们可以使用结构体来构造，得到一致的顺序</p>
+<p><strong style="color:red;">注意</strong></p>
+<blockquote>
+<p>Stuct中只有导出字段(首字母大写的)才可以转换为json，未导出的会被忽略！！！</p>
+</blockquote>
+<pre><code class="language-go">package main
+
+import (
+	&quot;encoding/json&quot;
+	&quot;fmt&quot;
+)
+type person struct {
+	Name string
+	Age interface{}
+	Address interface{}
+	id string
+}
+func main(){
+	jsonSlice:=make([]*person,0)
+	jsonSlice=append(jsonSlice,&amp;person{&quot;小花&quot;,&quot;10&quot;,&quot;中国&quot;,&quot;12345&quot;})
+	jsonSlice=append(jsonSlice,&amp;person{&quot;小刘&quot;,10,[]int{0,1},&quot;007&quot;})
+	jsonString,err:=json.Marshal(jsonSlice)
+	if err!=nil{
+		fmt.Println(&quot;error&quot;)
+	}
+	fmt.Println(string(jsonString))
+}
+
+</code></pre>
+<p><em>输出</em></p>
+<pre><code>[{&quot;Name&quot;:&quot;小花&quot;,&quot;Age&quot;:&quot;10&quot;,&quot;Address&quot;:&quot;中国&quot;},{&quot;Name&quot;:&quot;小刘&quot;,&quot;Age&quot;:10,&quot;Address&quot;:[0,1]}]
+</code></pre>
+<p>如上输出，结构体里的id没有输出，我们可以把这个认为是私有的</p>
+<h2 id="序列化中key-val的对应关系">序列化中key-val的对应关系</h2>
+<ul>
+<li>普通类型</li>
+</ul>
+<p>在对非key-value这种对应关系的变量，如int，float，序列化以后也就只是转字符串而已，并不会按照键值对那样对应，这样得到的结果是没有意义的</p>
+<ul>
+<li>结构体</li>
+</ul>
+<p>把成员变量名当成key，成员变量的值当成val</p>
+<p>使用tag来设置导出的key不是成员变量名</p>
+<p>比如，中国人喜欢中文，那么将key设置为中文不是更容易理解</p>
+<pre><code class="language-go">package main
+
+import (
+	&quot;encoding/json&quot;
+	&quot;fmt&quot;
+)
+type person struct {
+	Name string `json:&quot;名字&quot;`
+	Age interface{} `json:&quot;年龄&quot;`
+	Address interface{} `json:&quot;地址&quot;`
+	id string
+}
+func main(){
+	jsonSlice:=make([]*person,0)
+	jsonSlice=append(jsonSlice,&amp;person{&quot;小花&quot;,&quot;10&quot;,&quot;中国&quot;,&quot;12345&quot;})
+	jsonSlice=append(jsonSlice,&amp;person{&quot;小刘&quot;,10,[]int{0,1},&quot;007&quot;})
+	jsonString,err:=json.Marshal(jsonSlice)
+	if err!=nil{
+		fmt.Println(&quot;error&quot;)
+	}
+	fmt.Println(string(jsonString))
+}
+
+</code></pre>
+<p><em>输出</em></p>
+<pre><code>[{&quot;名字&quot;:&quot;小花&quot;,&quot;年龄&quot;:&quot;10&quot;,&quot;地址&quot;:&quot;中国&quot;},{&quot;名字&quot;:&quot;小刘&quot;,&quot;年龄&quot;:10,&quot;地址&quot;:[0,1]}]
+</code></pre>
+<ul>
+<li>map</li>
+</ul>
+<p>key-val一致</p>
+<h1 id="反序列化">反序列化</h1>
+<p>将json字符串反序列化为go中的类型</p>
+<p>仍然以开头的json字符串为例，分别反序列化为[]map[string]interface和[]struct</p>
+<p>下面引入了两种map，看看分别转换的情况</p>
+<pre><code class="language-go">package main
+
+import (
+	&quot;encoding/json&quot;
+	&quot;fmt&quot;
+)
+
+func main(){
+	jsonString:=`[{&quot;name&quot;:&quot;小花&quot;,&quot;age&quot;:&quot;10&quot;,&quot;address&quot;:&quot;中国&quot;},{&quot;name&quot;:&quot;小刘&quot;,&quot;age&quot;:10,&quot;address&quot;:[0,1]}]`
+	var p1 []map[string]interface{}
+	err:=json.Unmarshal([]byte(jsonString),&amp;p1)
+	if err!=nil{
+		fmt.Println(&quot;p1:&quot;,err)
+	}
+	fmt.Println(&quot;p1:&quot;,p1)
+
+	var p2 []map[int]interface{}
+	err=json.Unmarshal([]byte(jsonString),&amp;p2)
+	if err!=nil{
+		fmt.Println(&quot;p2:&quot;,err)
+	}
+	fmt.Println(&quot;p2:&quot;,p2)
+}
+
+</code></pre>
+<p><em>输出</em></p>
+<pre><code>p1: [map[address:中国 age:10 name:小花] map[address:[0 1] age:10 name:小刘]]
+p2: json: cannot unmarshal number name into Go value of type int
+p2: [map[] map[]]
+</code></pre>
+<p>由此可见，map的key类型是必须固定的，固定为string类型，否则就会报错</p>
+<p>下面分别引入了不同的结构体，通过输出说明什么样的结构体才能成功的反序列化</p>
+<pre><code class="language-go">package main
+
+import (
+	&quot;encoding/json&quot;
+	&quot;fmt&quot;
+)
+
+type person1 struct {
+	Name string
+	Age interface{}
+	Address interface{}
+}
+type person2 struct {
+	name string
+	age interface{}
+	address interface{}
+}
+type person3 struct {
+	Naem string
+	Age interface{}
+	Address interface{}
+}
+type person4 struct {
+	Name string
+	Age interface{}
+	Address interface{}
+	Id string
+}
+type person5 struct {
+	Name int
+	Age interface{}
+	Address interface{}
+	id string
+}
+func main(){
+	jsonString:=`[{&quot;name&quot;:&quot;小花&quot;,&quot;age&quot;:&quot;10&quot;,&quot;address&quot;:&quot;中国&quot;},{&quot;name&quot;:&quot;小刘&quot;,&quot;age&quot;:10,&quot;address&quot;:[0,1]}]`
+	var p1 []person1
+	err:=json.Unmarshal([]byte(jsonString),&amp;p1)
+	if err!=nil{
+		fmt.Println(&quot;p1:&quot;,err)
+	}
+	fmt.Println(&quot;p1:&quot;,p1)
+
+	var p2 []person2
+	err=json.Unmarshal([]byte(jsonString),&amp;p2)
+	if err!=nil{
+		fmt.Println(&quot;p2:&quot;,err)
+	}
+	fmt.Println(&quot;p2:&quot;,p2)
+
+	var p3 []person3
+	err=json.Unmarshal([]byte(jsonString),&amp;p3)
+	if err!=nil{
+		fmt.Println(&quot;p3:&quot;,err)
+	}
+	fmt.Println(&quot;p3:&quot;,p3)
+
+	var p4 []person4
+	err=json.Unmarshal([]byte(jsonString),&amp;p4)
+	if err!=nil{
+		fmt.Println(&quot;p4:&quot;,err)
+	}
+	fmt.Println(&quot;p4:&quot;,p4)
+
+	var p5 []person5
+	err=json.Unmarshal([]byte(jsonString),&amp;p5)
+	if err!=nil{
+		fmt.Println(&quot;p5:&quot;,err)
+	}
+	fmt.Println(&quot;p5:&quot;,p5)
+}
+
+</code></pre>
+<p><em>输出</em></p>
+<pre><code>p1: [{小花 10 中国} {小刘 10 [0 1]}]
+p2: [{ &lt;nil&gt; &lt;nil&gt;} { &lt;nil&gt; &lt;nil&gt;}]
+p3: [{小花 10 中国} {小刘 10 [0 1]}]
+p31: [{小花 10 中国} {小刘 10 [0 1]}]
+p4: [{小花 10 中国 } {小刘 10 [0 1] }]
+p5: json: cannot unmarshal string into Go struct field person5.Name of type int
+p5: [{0 10 中国 } {0 10 [0 1] }]
+</code></pre>
+<p>person1是绝对合法的，</p>
+<p>person2未导出所以就不能反序列化成功，但是不会报错，</p>
+<p>person3的Naem，导致一个key不匹配，所以就忽略这个字段，不报错</p>
+<p>person31的Naem虽然不匹配，但是tag是匹配的，所以会使用这个字段进行匹配</p>
+<p>person4多了一个字段，所以也忽略这个字段，不报错</p>
+<p>person5的Name类型是int类型，和json字符串中的string类型是不符合的，会报错</p>
+<h1 id="总结">总结</h1>
+<ol>
+<li>序列化和反序列化包为encoding/json</li>
+<li>函数可以使用Marshal和Unmarshal</li>
+<li>理论上go里面的所有类型都可以序列化，但是结构体，map序列化较有意义
+<ul>
+<li>结构体的非导出字段不进行序列化</li>
+<li>结构体如果定义了tag，那么序列化的key就是tag</li>
+</ul>
+</li>
+<li>反序列化一定要注意字段的类型匹配，否则会报错；
+<ul>
+<li>结构体的非导出字段不进行反序列化</li>
+<li>名称不匹配的结构体或结构体中多出的字段会忽略，不报错</li>
+<li>结构体中如果定义了tag，那么反序列化的key也会和tag进行匹配</li>
+</ul>
+</li>
+</ol>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Go语言的背景知识]]></title>
+        <id>https://WinterStarHu.github.io/post/go-yu-yan-de-bei-jing-zhi-shi/</id>
+        <link href="https://WinterStarHu.github.io/post/go-yu-yan-de-bei-jing-zhi-shi/">
+        </link>
+        <updated>2021-04-21T09:27:57.000Z</updated>
+        <summary type="html"><![CDATA[<p>从黑马Go语言《Go语言与区块链》看见的背景知识</p>
+]]></summary>
+        <content type="html"><![CDATA[<p>从黑马Go语言《Go语言与区块链》看见的背景知识</p>
+<!-- more -->
+<h1 id="开发史">开发史</h1>
+<h1 id="应用">应用</h1>
+<ul>
+<li>区块链</li>
+</ul>
+<p>两个主流区块链底层系统：以太坊(智能合约)和Hyperledger Fabric</p>
+]]></content>
+    </entry>
+</feed>

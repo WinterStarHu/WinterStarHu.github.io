@@ -1,0 +1,666 @@
+<html>
+
+<head>
+    <meta charset="utf-8"/>
+<meta name="description" content="Feel free to contact me."/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+
+<title>Go Slice，Map，Struct排坑 | WinterStarHu Go语言</title>
+
+<link rel="shortcut icon" href="https://WinterStarHu.github.io/favicon.ico?v=1688302623657">
+
+<link href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" rel="stylesheet">
+<link rel="stylesheet" href="https://WinterStarHu.github.io/styles/main.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.0/dist/css/bootstrap.min.css">
+
+
+<script src="https://cdn.jsdelivr.net/npm/@highlightjs/cdn-assets/highlight.min.js"></script>
+<script src="https://cdn.bootcss.com/highlight.js/9.15.10/languages/dockerfile.min.js"></script>
+<script src="https://cdn.bootcss.com/highlight.js/9.15.10/languages/dart.min.js"></script>
+
+<script src="https://cdn.jsdelivr.net/npm/moment@2.27.0/moment.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.0/dist/js/bootstrap.min.js"></script>
+
+<!-- DEMO JS -->
+<!--<script src="media/scripts/index.js"></script>-->
+
+
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-157397408-1"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+
+        function gtag() {
+            dataLayer.push(arguments);
+        }
+
+        gtag('js', new Date());
+        gtag('config', 'UA-157397408-1');
+    </script>
+
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.css">
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mermaid/8.8.0/mermaid.min.js"></script>
+<script>
+    var config = {
+        startOnLoad:true,
+        flowchart:{
+            useMaxWidth:false,
+            htmlLabels:true
+        }
+    };
+    mermaid.initialize(config);
+    $(function(){
+        var elements = document.getElementsByClassName("language-mermaid");
+        for (var i = elements.length; i--;) {
+            element = elements[i];
+            var graphDefinition = element.innerText;
+            if (graphDefinition) {
+                var svg = mermaid.render('ha_mermaid_' + i, graphDefinition, function(svg){});
+                if (svg) {
+                    var svgElement = document.createElement('div');
+                    preNode = element.parentNode;
+                    svgElement.innerHTML = svg;
+                    svgElement.setAttribute('class', 'mermaid');
+                    svgElement.setAttribute('data-processed', 'true');
+                    preNode.parentNode.replaceChild(svgElement, preNode);
+                }
+            }
+        }
+    });
+</script>
+</head>
+
+<body>
+    <div class="main gt-bg-theme-color-first">
+        <nav class="navbar navbar-expand-lg">
+    <a href="/">
+        <div class="navbar-brand">
+            <img class="user-avatar" src="/images/avatar.png" alt="头像">
+            <div class="site-name gt-c-content-color-first">
+                WinterStarHu Go语言
+            </div>
+        </div>
+    </a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <i class="fas fa-bars gt-c-content-color-first" style="font-size: 18px"></i>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <div class="navbar-nav " style="text-align: center">
+            
+                <div class="nav-item">
+                    
+                        <a href="/" class="menu gt-a-link">
+                            首页
+                        </a>
+                    
+                </div>
+            
+                <div class="nav-item">
+                    
+                        <a href="/archives" class="menu gt-a-link">
+                            归档
+                        </a>
+                    
+                </div>
+            
+                <div class="nav-item">
+                    
+                        <a href="/tags" class="menu gt-a-link">
+                            标签
+                        </a>
+                    
+                </div>
+            
+                <div class="nav-item">
+                    
+                        <a href="/post/about" class="menu gt-a-link">
+                            关于
+                        </a>
+                    
+                </div>
+            
+        </div>
+        <div style="text-align: center">
+            <form id="gridea-search-form" style="position: relative" data-update="1688302623657" action="/search/index.html">
+                <input class="search-input" autocomplete="off" spellcheck="false" name="q" placeholder="搜索文章" />
+                <i class="fas fa-search gt-c-content-color-first" style="position: absolute; top: 9px; left: 10px;"></i>
+            </form>
+        </div>
+    </div>
+</nav>
+
+        <div class="post-container">
+
+            <!-- <div class="post-detail gt-bg-theme-color-second"> -->
+            <article style="display:flex;">
+                <div class="post-detail gt-bg-theme-color-second gt-post-content">
+                    <h2 class="post-title">
+                        Go Slice，Map，Struct排坑
+                    </h2>
+                    <div class="post-info">
+                        <div>
+                            <time class="post-time gt-c-content-color-first">
+                                · 2021-08-14 ·
+                            </time>
+                            
+                            <a href="https://WinterStarHu.github.io/tag/F6pGCa-i7/" class="post-tags">
+                                # Go
+                            </a>
+                            
+                        </div>
+                        <div>
+                            
+                        </div>
+                    </div>
+
+                    <!-- <div class="post-content-wrapper"> -->
+                    <div class="post-content">
+                        
+    <div class="toc-card i-card ">
+        <div class="toc-content">
+            <ul class="markdownIt-TOC">
+<li><a href="#slice">Slice</a>
+<ul>
+<li><a href="#for-range">for range</a></li>
+</ul>
+</li>
+<li><a href="#map">Map</a></li>
+<li><a href="#struct">Struct</a></li>
+</ul>
+
+        </div>
+        <script>
+            function locateCatelogList() {
+                /*获取文章目录集合,可通过:header过滤器*/
+                var alis = $('.post-content :header');
+                /*获取侧边栏目录列表集合**/
+                var sidebar_alis = $('.markdownIt-TOC a');
+                /*获取滚动条到顶部的距离*/
+                var scroll_height = $(window).scrollTop();
+                for (var i = 0; i < alis.length; i++) {
+                    /*获取锚点集合中的元素分别到顶点的距离*/
+                    var a_height = $(alis[i]).offset().top;
+                    if (a_height < scroll_height) {
+                        /*高亮显示*/
+                        sidebar_alis.removeClass('on');
+                        $(sidebar_alis[i]).addClass('on');
+                    }
+                }
+            }
+            $(function() {
+                /*绑定滚动事件 */
+                $(window).bind('scroll', locateCatelogList);
+            });
+        </script>
+    </div>
+    
+
+                        <p>收集帖 本帖主要收集关于Slice，Map，Struct遇到的坑，不定时更新，总结</p>
+<!-- more -->
+<h1 id="slice">Slice</h1>
+<p>Slice底层是一个数组，在进行Slice赋值操作时，底层的数组是不改变的，只是Slice的可见长度改变了，容量也是会不变的。<a href="https://blog.csdn.net/skh2015java/article/details/79771799"><u>Slice的数据结构</u></a>是包含指针，长度，容量三个值的结构体。</p>
+<pre><code class="language-go">package main
+
+import &quot;fmt&quot;
+func changeSlice(arr []int){
+	fmt.Printf(&quot;changeSlice中传入的arr %p %v 长度：%d 容量%d\n&quot;,&amp;arr,arr,len(arr),cap(arr))
+	arr[0]++
+	fmt.Printf(&quot;changeSlice中传入的arr change后 %p %v 长度：%d 容量%d\n&quot;,&amp;arr,arr,len(arr),cap(arr))
+	arr=append(arr,0)
+	fmt.Printf(&quot;changeSlice中传入的arr add后 %p %v 长度：%d 容量%d\n&quot;,&amp;arr,arr,len(arr),cap(arr))
+}
+func main(){
+	arr1:=[]int{1,2,3}
+	arr2:=arr1
+	fmt.Printf(&quot;main的arr1 %p %v 长度：%d 容量%d \n&quot;,&amp;arr1,arr1,len(arr1),cap(arr1))
+	changeSlice(arr1)
+	fmt.Printf(&quot;main的arr1 change后 %p %v 长度：%d 容量%d \n&quot;,&amp;arr1,arr1,len(arr1),cap(arr1))
+
+	fmt.Printf(&quot;main的arr2 %p %v 长度：%d 容量%d\n&quot;,&amp;arr2,arr2,len(arr2),cap(arr2))
+	changeSlice(arr2)
+	fmt.Printf(&quot;main的arr2 change后 %p %v 长度：%d 容量%d\n&quot;,&amp;arr2,arr2,len(arr2),cap(arr2))
+}
+
+</code></pre>
+<p><em>输出</em></p>
+<pre><code>main的arr1 0xc000004078 [1 2 3] 长度：3 容量3 
+changeSlice中传入的arr 0xc0000040c0 [1 2 3] 长度：3 容量3
+changeSlice中传入的arr change后 0xc0000040c0 [2 2 3] 长度：3 容量3
+changeSlice中传入的arr add后 0xc0000040c0 [2 2 3 0] 长度：4 容量6
+main的arr1 change后 0xc000004078 [2 2 3] 长度：3 容量3 
+main的arr2 0xc000004090 [2 2 3] 长度：3 容量3
+changeSlice中传入的arr 0xc000004150 [2 2 3] 长度：3 容量3
+changeSlice中传入的arr change后 0xc000004150 [3 2 3] 长度：3 容量3
+changeSlice中传入的arr add后 0xc000004150 [3 2 3 0] 长度：4 容量6
+main的arr2 change后 0xc000004090 [3 2 3] 长度：3 容量3
+</code></pre>
+<p>仔细观察上面代码，可以得出以下结论：</p>
+<ol>
+<li>
+<p>Slice是值传递，因为无论是赋值还是函数传参，获取到的地址都是不一样的，<a href="https://blog.csdn.net/wplblog/article/details/113386932"><u>%p</u></a>表示获取指针</p>
+</li>
+<li>
+<p>虽然是值传递，这个值是指Slice指向的结构体的值，他们仍然共享同一个底层数组，修改变量时，arr改变了，arr1和arr2都会跟着改变</p>
+</li>
+<li>
+<p>注意append，当数组元素增加大于容量时，会发生扩容(扩容是2倍扩容，&gt;1000是1.5倍扩容)，这时候arr指向的数组和arr1和arr2指向的就不是同一块底层数组了。从函数退出后，arr1和arr2的元素值、长度和容量不同就可以看出来</p>
+</li>
+<li>
+<p>建议如果要对传入的arr进行修改，请必须返回修改后的arr！</p>
+<p>示例如下：</p>
+<pre><code>package main
+
+import &quot;fmt&quot;
+func changeSlice(arr []int)[]int{
+	fmt.Printf(&quot;changeSlice中传入的arr %p %v 长度：%d 容量%d\n&quot;,&amp;arr,arr,len(arr),cap(arr))
+	arr[0]++
+	fmt.Printf(&quot;changeSlice中传入的arr change后 %p %v 长度：%d 容量%d\n&quot;,&amp;arr,arr,len(arr),cap(arr))
+	arr=append(arr,0)
+	fmt.Printf(&quot;changeSlice中传入的arr add后 %p %v 长度：%d 容量%d\n&quot;,&amp;arr,arr,len(arr),cap(arr))
+	return arr
+}
+func main(){
+	arr1:=[]int{1,2,3}
+	arr2:=arr1
+	fmt.Printf(&quot;main的arr1 %p %v 长度：%d 容量%d \n&quot;,&amp;arr1,arr1,len(arr1),cap(arr1))
+	arr1=changeSlice(arr1)
+	fmt.Printf(&quot;main的arr1 change后 %p %v 长度：%d 容量%d \n&quot;,&amp;arr1,arr1,len(arr1),cap(arr1))
+
+	fmt.Printf(&quot;main的arr2 %p %v 长度：%d 容量%d\n&quot;,&amp;arr2,arr2,len(arr2),cap(arr2))
+	arr2=changeSlice(arr2)
+	fmt.Printf(&quot;main的arr2 change后 %p %v 长度：%d 容量%d\n&quot;,&amp;arr2,arr2,len(arr2),cap(arr2))
+}
+</code></pre>
+<p><em>输出</em></p>
+<pre><code>main的arr1 0xc000004078 [1 2 3] 长度：3 容量3 
+changeSlice中传入的arr 0xc0000040c0 [1 2 3] 长度：3 容量3
+changeSlice中传入的arr change后 0xc0000040c0 [2 2 3] 长度：3 容量3
+changeSlice中传入的arr add后 0xc0000040c0 [2 2 3 0] 长度：4 容量6
+main的arr1 change后 0xc000004078 [2 2 3 0] 长度：4 容量6 
+main的arr2 0xc000004090 [2 2 3] 长度：3 容量3
+changeSlice中传入的arr 0xc000004150 [2 2 3] 长度：3 容量3
+changeSlice中传入的arr change后 0xc000004150 [3 2 3] 长度：3 容量3
+changeSlice中传入的arr add后 0xc000004150 [3 2 3 0] 长度：4 容量6
+main的arr2 change后 0xc000004090 [3 2 3 0] 长度：4 容量6
+</code></pre>
+<h2 id="for-range">for range</h2>
+<pre><code class="language-go">package main
+
+import &quot;fmt&quot;
+func main(){
+	arr:=[]int{1,2,3}
+	for ind,val:=range arr{
+		fmt.Printf(&quot;val %p %v\n&quot;,&amp;val,val)
+		fmt.Printf(&quot;arr[ind] %p %v\n&quot;,&amp;arr[ind],arr[ind])
+		val++
+		fmt.Printf(&quot;add后 val %p %v\n&quot;,&amp;val,val)
+		fmt.Printf(&quot;add后 arr[ind] %p %v\n&quot;,&amp;arr[ind],arr[ind])
+	}
+}
+
+</code></pre>
+<p><em>输出</em></p>
+<pre><code>val 0xc00000a098 1
+arr[ind] 0xc000012150 1
+add后 val 0xc00000a098 2
+add后 arr[ind] 0xc000012150 1
+val 0xc00000a098 2
+arr[ind] 0xc000012158 2
+add后 val 0xc00000a098 3
+add后 arr[ind] 0xc000012158 2
+val 0xc00000a098 3
+arr[ind] 0xc000012160 3
+add后 val 0xc00000a098 4
+add后 arr[ind] 0xc000012160 3
+</code></pre>
+<p>通过代码可以得出如下结论：</p>
+<ol>
+<li>for range得到的val的地址是同一个，只是每次更新值</li>
+<li>修改val对Slice不会造成任何影响！</li>
+</ol>
+<h1 id="map">Map</h1>
+<ul>
+<li>Map的Key必须是<a href="https://blog.csdn.net/guangcheng0312q/article/details/106416799"><u>可比较的类型</u></a>，Slice，channel，map不可比较，另外结构体是否可比较是根据结构体中的元素判断的。</li>
+</ul>
+<pre><code class="language-go">package main
+
+import &quot;fmt&quot;
+
+func main(){
+	a:=make(chan int,1)
+	b:=make(chan int,1)
+	a&lt;-1
+	b&lt;-1
+	if a==b{
+		fmt.Println(&quot;可比较&quot;)
+	}
+}
+</code></pre>
+<p>chan虽然不报错，但是上述代码并不能得出正确的比较结果，而Slice和Map一旦作比较就报错了。</p>
+<ul>
+<li>Map使用时，必须要初始化</li>
+</ul>
+<p>也就是</p>
+<pre><code class="language-go">var a map[int]int
+a:=make(map[]int,0)
+</code></pre>
+<p>第一个是声明，第二个是初始化</p>
+<ul>
+<li>Map的Val是结构体时，一定要使用结构体指针传值，否则无法修改结构体元素</li>
+</ul>
+<pre><code class="language-go">package main
+
+import &quot;fmt&quot;
+
+type person struct {
+	name string
+	age int
+}
+func main(){
+	a:=make(map[string]person)
+	a[&quot;007&quot;]=person{&quot;小花&quot;,15}
+	a[&quot;008&quot;]=person{&quot;小刘&quot;,18}
+	fmt.Println(a)
+	a[&quot;008&quot;].name=&quot;小白&quot;
+}
+</code></pre>
+<p>最后一行 a[&quot;008&quot;].name=&quot;小白&quot;是错的</p>
+<pre><code class="language-go">package main
+
+import &quot;fmt&quot;
+
+type person struct {
+	name string
+	age int
+}
+func main(){
+	a:=make(map[string]*person)
+	a[&quot;007&quot;]=&amp;person{&quot;小花&quot;,15}
+	a[&quot;008&quot;]=&amp;person{&quot;小刘&quot;,18}
+	fmt.Println(a)
+	a[&quot;008&quot;].name=&quot;小白&quot;
+	fmt.Println(a[&quot;008&quot;])
+}
+</code></pre>
+<p>所以传结构体时，使用指针传递最好</p>
+<h1 id="struct">Struct</h1>
+<pre><code class="language-go">package main
+
+import &quot;fmt&quot;
+
+type person struct {
+	name string
+	age int
+}
+func changeStruct(p person){
+	fmt.Println(&quot;changeStruct person %p %v&quot;,&amp;p,p)
+	p.age=17
+	fmt.Println(&quot;changeStruct person change后 %p %v&quot;,&amp;p,p)
+}
+func main(){
+	person1:=person{&quot;小刘&quot;,18}
+	fmt.Println(&quot;main person1 %p %v&quot;,&amp;person1,person1)
+	changeStruct(person1)
+	fmt.Println(&quot;main person1 change后 %p %v&quot;,&amp;person1,person1)
+}
+
+</code></pre>
+<p><em>输出</em></p>
+<pre><code>main person1 %p %v &amp;{小刘 18} {小刘 18}
+changeStruct person %p %v &amp;{小刘 18} {小刘 18}
+changeStruct person change后 %p %v &amp;{小刘 17} {小刘 17}
+main person1 change后 %p %v &amp;{小刘 18} {小刘 18}
+</code></pre>
+<p>从以上可以得出：</p>
+<ol>
+<li>Struct是值传递，传入的只是Struct值，所以会经过值拷贝，这样也消耗很大</li>
+<li>不如传入指针</li>
+</ol>
+<pre><code class="language-go">package main
+
+import &quot;fmt&quot;
+
+type person struct {
+	name string
+	age int
+}
+func changeStruct(p *person){
+	fmt.Println(&quot;changeStruct person %p %v&quot;,&amp;p,p)
+	p.age=17
+	fmt.Println(&quot;changeStruct person change后 %p %v&quot;,&amp;p,p)
+}
+func main(){
+	person1:=person{&quot;小刘&quot;,18}
+	fmt.Println(&quot;main person1 %p %v&quot;,&amp;person1,person1)
+	changeStruct(&amp;person1)
+	fmt.Println(&quot;main person1 change后 %p %v&quot;,&amp;person1,person1)
+}
+
+</code></pre>
+<p><em>输出</em></p>
+<pre><code>main person1 %p %v &amp;{小刘 18} {小刘 18}
+changeStruct person %p %v 0xc000006030 &amp;{小刘 18}
+changeStruct person change后 %p %v 0xc000006030 &amp;{小刘 17}
+main person1 change后 %p %v &amp;{小刘 17} {小刘 17}
+</code></pre>
+<blockquote>
+<p>注：结构体指针和结构体调用成员的方法是一样的，都是p.name，当然对于结构体指针也支持（*p).name，对于结构体也支持&amp;p.name。</p>
+</blockquote>
+</li>
+</ol>
+ 
+                    </div>
+                    <div class="essaySuffix-box">
+                        <div class="essaySuffix-box-left"><img
+                                src="/images/avatar.png" alt="">
+                        </div>
+                        <div class="essaySuffix-box-right"><span
+                                class="essaySuffix-right-title">本文作者</span>：<strong><span style="font-size: 12px;"><a
+                                        href="/about"
+                                        target="_blank">WinterStarHu Go语言</a></span></strong> <br><span
+                                style="font-weight: bold; white-space:nowrap;">本文链接</span>：<a
+                                href="https://WinterStarHu.github.io/post/go-slicemapstruct-pai-keng/"
+                                target="_blank">https://WinterStarHu.github.io/post/go-slicemapstruct-pai-keng/</a><br><span
+                                class="essaySuffix-right-title">版权声明</span>：本博客所有文章除特别声明外，均采用 <a
+                                href="https://creativecommons.org/licenses/by-nc-nd/4.0/" alt="BY-NC-SA"
+                                title="BY-NC-SA" target="_blank">BY-NC-SA</a> 许可协议。转载请注明出处！</div>
+                        <div style="clear: both;"></div>
+                    </div>
+                </div>
+                <!-- </div> -->
+                <div class="toc-container">
+                    <ul class="markdownIt-TOC">
+<li><a href="#slice">Slice</a>
+<ul>
+<li><a href="#for-range">for range</a></li>
+</ul>
+</li>
+<li><a href="#map">Map</a></li>
+<li><a href="#struct">Struct</a></li>
+</ul>
+
+                </div>
+            </article>
+            <!-- </div> -->
+
+          
+
+            
+            <div class="next-post">
+                <div class="next gt-c-content-color-first">下一篇</div>
+                <a href="https://WinterStarHu.github.io/post/go-fu-gai-ce-shi/" class="post-title gt-a-link">
+                    Go 覆盖测试
+                </a>
+            </div>
+            
+
+            
+            
+            <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk/dist/gitalk.min.css">
+<script src="https://cdn.jsdelivr.net/npm/gitalk/dist/gitalk.min.js"></script>
+<script>
+    // md5.min.js
+    !function(n){
+        "use strict";
+        function d(n,t){var r=(65535&n)+(65535&t);return(n>>16)+(t>>16)+(r>>16)<<16|65535&r}
+        function f(n,t,r,e,o,u){return d((c=d(d(t,n),d(e,u)))<<(f=o)|c>>>32-f,r);var c,f}
+        function l(n,t,r,e,o,u,c){return f(t&r|~t&e,n,t,o,u,c)}
+        function v(n,t,r,e,o,u,c){return f(t&e|r&~e,n,t,o,u,c)}
+        function g(n,t,r,e,o,u,c){return f(t^r^e,n,t,o,u,c)}
+        function m(n,t,r,e,o,u,c){return f(r^(t|~e),n,t,o,u,c)}
+        function i(n,t){var r,e,o,u,c;n[t>>5]|=128<<t%32,n[14+(t+64>>>9<<4)]=t;var f=1732584193,i=-271733879,a=-1732584194,h=271733878;for(r=0;r<n.length;r+=16)f=l(e=f,o=i,u=a,c=h,n[r],7,-680876936),h=l(h,f,i,a,n[r+1],12,-389564586),a=l(a,h,f,i,n[r+2],17,606105819),i=l(i,a,h,f,n[r+3],22,-1044525330),f=l(f,i,a,h,n[r+4],7,-176418897),h=l(h,f,i,a,n[r+5],12,1200080426),a=l(a,h,f,i,n[r+6],17,-1473231341),i=l(i,a,h,f,n[r+7],22,-45705983),f=l(f,i,a,h,n[r+8],7,1770035416),h=l(h,f,i,a,n[r+9],12,-1958414417),a=l(a,h,f,i,n[r+10],17,-42063),i=l(i,a,h,f,n[r+11],22,-1990404162),f=l(f,i,a,h,n[r+12],7,1804603682),h=l(h,f,i,a,n[r+13],12,-40341101),a=l(a,h,f,i,n[r+14],17,-1502002290),f=v(f,i=l(i,a,h,f,n[r+15],22,1236535329),a,h,n[r+1],5,-165796510),h=v(h,f,i,a,n[r+6],9,-1069501632),a=v(a,h,f,i,n[r+11],14,643717713),i=v(i,a,h,f,n[r],20,-373897302),f=v(f,i,a,h,n[r+5],5,-701558691),h=v(h,f,i,a,n[r+10],9,38016083),a=v(a,h,f,i,n[r+15],14,-660478335),i=v(i,a,h,f,n[r+4],20,-405537848),f=v(f,i,a,h,n[r+9],5,568446438),h=v(h,f,i,a,n[r+14],9,-1019803690),a=v(a,h,f,i,n[r+3],14,-187363961),i=v(i,a,h,f,n[r+8],20,1163531501),f=v(f,i,a,h,n[r+13],5,-1444681467),h=v(h,f,i,a,n[r+2],9,-51403784),a=v(a,h,f,i,n[r+7],14,1735328473),f=g(f,i=v(i,a,h,f,n[r+12],20,-1926607734),a,h,n[r+5],4,-378558),h=g(h,f,i,a,n[r+8],11,-2022574463),a=g(a,h,f,i,n[r+11],16,1839030562),i=g(i,a,h,f,n[r+14],23,-35309556),f=g(f,i,a,h,n[r+1],4,-1530992060),h=g(h,f,i,a,n[r+4],11,1272893353),a=g(a,h,f,i,n[r+7],16,-155497632),i=g(i,a,h,f,n[r+10],23,-1094730640),f=g(f,i,a,h,n[r+13],4,681279174),h=g(h,f,i,a,n[r],11,-358537222),a=g(a,h,f,i,n[r+3],16,-722521979),i=g(i,a,h,f,n[r+6],23,76029189),f=g(f,i,a,h,n[r+9],4,-640364487),h=g(h,f,i,a,n[r+12],11,-421815835),a=g(a,h,f,i,n[r+15],16,530742520),f=m(f,i=g(i,a,h,f,n[r+2],23,-995338651),a,h,n[r],6,-198630844),h=m(h,f,i,a,n[r+7],10,1126891415),a=m(a,h,f,i,n[r+14],15,-1416354905),i=m(i,a,h,f,n[r+5],21,-57434055),f=m(f,i,a,h,n[r+12],6,1700485571),h=m(h,f,i,a,n[r+3],10,-1894986606),a=m(a,h,f,i,n[r+10],15,-1051523),i=m(i,a,h,f,n[r+1],21,-2054922799),f=m(f,i,a,h,n[r+8],6,1873313359),h=m(h,f,i,a,n[r+15],10,-30611744),a=m(a,h,f,i,n[r+6],15,-1560198380),i=m(i,a,h,f,n[r+13],21,1309151649),f=m(f,i,a,h,n[r+4],6,-145523070),h=m(h,f,i,a,n[r+11],10,-1120210379),a=m(a,h,f,i,n[r+2],15,718787259),i=m(i,a,h,f,n[r+9],21,-343485551),f=d(f,e),i=d(i,o),a=d(a,u),h=d(h,c);return[f,i,a,h]}
+        function a(n){var t,r="",e=32*n.length;for(t=0;t<e;t+=8)r+=String.fromCharCode(n[t>>5]>>>t%32&255);return r}
+        function h(n){var t,r=[];for(r[(n.length>>2)-1]=void 0,t=0;t<r.length;t+=1)r[t]=0;var e=8*n.length;for(t=0;t<e;t+=8)r[t>>5]|=(255&n.charCodeAt(t/8))<<t%32;return r}
+        function e(n){var t,r,e="0123456789abcdef",o="";for(r=0;r<n.length;r+=1)t=n.charCodeAt(r),o+=e.charAt(t>>>4&15)+e.charAt(15&t);return o}
+        function r(n){return unescape(encodeURIComponent(n))}
+        function o(n){return a(i(h(t=r(n)),8*t.length));var t}
+        function u(n,t){return function(n,t){var r,e,o=h(n),u=[],c=[];for(u[15]=c[15]=void 0,16<o.length&&(o=i(o,8*n.length)),r=0;r<16;r+=1)u[r]=909522486^o[r],c[r]=1549556828^o[r];return e=i(u.concat(h(t)),512+8*t.length),a(i(c.concat(e),640))}(r(n),r(t))}
+        function t(n,t,r){return t?r?u(t,n):e(u(t,n)):r?o(n):e(o(n))}
+        "function"==typeof define&&define.amd?define(function(){return t}):"object"==typeof module&&module.exports?module.exports=t:n.md5=t;
+    }(this);
+</script>
+
+
+<div id="gitalk-container"></div>
+
+<script>
+
+  var gitalk = new Gitalk({
+    clientID: 'f8e90542c37bcacd90e3',
+    clientSecret: '05654d01e307789fa9cd6ab3f438205d12a040f0',
+    repo: 'winterstarhu.github.io',
+    owner: 'WinterStarHu',
+    admin: ['WinterStarHu'],
+    id: md5(location.pathname),      // Ensure uniqueness and length less than 50
+    distractionFreeMode: false       // Facebook-like distraction free mode
+  })
+
+  gitalk.render('gitalk-container')
+
+</script>
+
+            
+
+            
+            
+
+            
+
+            <div class="site-footer gt-c-content-color-first">
+
+  <div class="social-container">
+
+    <a href="https://github.com/WinterStarHu" target="_blank" title="https://github.com/WinterStarHu">
+      <i class="fab fa-github gt-c-content-color-first"></i>
+    </a>
+
+    <a href="https://home.cnblogs.com/u/1859312/" target="_blank" title="https://home.cnblogs.com/u/1859312/">
+      <i class="fas fa-blog gt-c-content-color-first"></i>
+    </a>
+
+    <a href="https://blog.csdn.net/qq_33705315" target="_blank" title="https://blog.csdn.net/qq_33705315">
+      <i class="fab fa-cuttlefish gt-c-content-color-first"></i>
+    </a>
+
+    <a href="mailto:dongxinghu@foxmail.com" title="dongxinghu@foxmail.com">
+      <i class="fas fa-envelope gt-c-content-color-first"></i>
+    </a>
+
+  </div>
+  <div class="slogan gt-c-content-color-first">Feel free to contact me.</div>
+  
+  <div class="footer-info">
+    Powered by <a href="https://github.com/getgridea/gridea" target="_blank">Gridea</a>
+  </div>
+  
+  <div>
+    <div>
+      Theme by <a href="https://github.com/WinterStarHu/gridea-theme-pure-fashion-new" target="_blank">winterstarhu</a>, Powered by <a
+              href="https://github.com/getgridea/gridea" target="_blank">Gridea | <a href="https://WinterStarHu.github.io/atom.xml" target="_blank">RSS</a></a>
+  </div>
+</div>
+
+<script>
+  hljs.initHighlightingOnLoad()
+</script>
+
+            <script>
+  let mainNavLinks = document.querySelectorAll(".markdownIt-TOC a");
+  
+  if (mainNavLinks == null || mainNavLinks.length == 0) {
+    let tocContainer = document.querySelector(".toc-container");
+    tocContainer.classList.remove("toc-container")
+    // tocContainer.parentElement.firstElementChild.style.width = "100%"
+    console.log("隐藏大纲")
+  } else {
+
+    // This should probably be throttled.
+    // Especially because it triggers during smooth scrolling.
+    // https://lodash.com/docs/4.17.10#throttle
+    // You could do like...
+    // window.addEventListener("scroll", () => {
+    //    _.throttle(doThatStuff, 100);
+    // });
+    // Only not doing it here to keep this Pen dependency-free.
+
+
+    window.addEventListener("scroll", event => {
+      let fromTop = window.scrollY;
+
+      mainNavLinks.forEach((link, index) => {
+        let section = document.getElementById(decodeURI(link.hash).substring(1));
+        let nextSection = null
+        if (mainNavLinks[index + 1]) {
+          nextSection = document.getElementById(decodeURI(mainNavLinks[index + 1].hash).substring(1));
+        }
+        if (section.offsetTop <= fromTop) {
+          if (nextSection) {
+            if (nextSection.offsetTop > fromTop) {
+              link.classList.add("current");
+            } else {
+              link.classList.remove("current");
+            }
+          } else {
+            link.classList.add("current");
+          }
+        } else {
+          link.classList.remove("current");
+        }
+      });
+    });
+  }
+
+
+
+</script>
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css" />
+<script src="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js"></script>
+
+<script>
+  let images = document.querySelectorAll("figure > img");
+  //   debugger
+  //   console.log("dddd: "+ images);
+  images.forEach(image => {
+    var parent = image.parentElement;
+    parent.removeChild(image);
+    var aelem = document.createElement('a');
+    aelem.href = image.src;
+    aelem.dataset['fancybox'] = 'gallery';
+    aelem.classList.add('fancybox');
+    aelem.appendChild(image);
+    parent.appendChild(aelem);
+  })
+
+//   <a data-fancybox="gallery" href="big_1.jpg"><img src="small_1.jpg"></a>
+// <a data-fancybox="gallery" href="big_2.jpg"><img src="small_2.jpg"></a>
+</script>
+        </div>
+    </div>
+
+</body>
+
+</html>
